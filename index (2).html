@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TaxSetu</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#0f1117;color:#fff}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;border-bottom:1px solid #1e2130;position:sticky;top:0;background:#0f1117;z-index:100}
+.logo{font-size:22px;font-weight:700;color:#fff}.logo span{color:#00c896}
+.nav-links a{color:#9ca3af;text-decoration:none;margin-left:28px;font-size:14px}
+.nav-links a:hover{color:#00c896}
+.navbtn{background:#00c896;color:#000;border:none;border-radius:8px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer}
+.hero{text-align:center;padding:80px 20px;max-width:700px;margin:0 auto}
+.badge{display:inline-block;background:rgba(0,200,150,0.1);border:1px solid rgba(0,200,150,0.25);color:#00c896;font-size:12px;padding:5px 14px;border-radius:20px;margin-bottom:20px}
+h1{font-size:48px;font-weight:700;line-height:1.2;margin-bottom:16px}
+h1 span{color:#00c896}
+.hero p{font-size:16px;color:#9ca3af;line-height:1.7;margin-bottom:32px}
+.herobtn{background:#00c896;color:#000;border:none;border-radius:12px;padding:14px 28px;font-size:15px;font-weight:700;cursor:pointer;margin-right:10px}
+.herobtn2{background:transparent;border:1.5px solid #2a2d3e;color:#9ca3af;border-radius:12px;padding:14px 28px;font-size:15px;cursor:pointer}
+.stats{display:flex;justify-content:center;gap:60px;padding:40px 20px;border-top:1px solid #1e2130;border-bottom:1px solid #1e2130;flex-wrap:wrap}
+.stat{text-align:center}
+.statnum{font-size:32px;font-weight:700;color:#00c896;margin-bottom:4px}
+.statlbl{font-size:13px;color:#6b7280}
+.section{max-width:1100px;margin:0 auto;padding:70px 20px}
+.stag{text-align:center;color:#00c896;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.stitle{text-align:center;font-size:34px;font-weight:700;margin-bottom:10px}
+.ssub{text-align:center;color:#6b7280;font-size:15px;margin-bottom:48px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:#16181f;border:1px solid #1e2130;border-radius:14px;padding:26px;cursor:pointer;transition:border-color 0.2s,transform 0.2s}
+.card:hover{border-color:#00c896;transform:translateY(-4px)}
+.cicon{font-size:28px;margin-bottom:14px}
+.card h3{font-size:16px;font-weight:700;margin-bottom:8px}
+.card p{font-size:13px;color:#6b7280;line-height:1.6}
+.clickhint{font-size:11px;color:#00c896;margin-top:10px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:880px;margin:0 auto}
+.pcard{background:#16181f;border:1px solid #1e2130;border-radius:18px;padding:30px;text-align:center;position:relative;transition:transform 0.2s}
+.pcard:hover{transform:translateY(-4px)}
+.pcard.pop{border-color:#00c896}
+.popbadge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#00c896;color:#000;font-size:11px;font-weight:700;padding:4px 14px;border-radius:20px;white-space:nowrap}
+.pname{font-size:15px;font-weight:600;color:#9ca3af;margin-bottom:8px}
+.pamt{font-size:40px;font-weight:700;margin-bottom:4px}
+.pamt small{font-size:16px;color:#6b7280}
+.pper{font-size:12px;color:#6b7280;margin-bottom:20px}
+.plist{list-style:none;text-align:left;margin-bottom:24px}
+.plist li{font-size:13px;color:#9ca3af;padding:5px 0;border-bottom:1px solid #1e2130;display:flex;gap:8px}
+.plist li span{color:#00c896;font-weight:700}
+.pbtn{width:100%;padding:13px;background:#00c896;border:none;border-radius:10px;color:#000;font-size:14px;font-weight:700;cursor:pointer}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}
+.step{background:#16181f;border:1px solid #1e2130;border-radius:14px;padding:26px;text-align:center}
+.stepnum{width:42px;height:42px;background:rgba(0,200,150,0.1);border:1.5px solid rgba(0,200,150,0.3);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#00c896;margin:0 auto 14px}
+.step h3{font-size:14px;font-weight:700;margin-bottom:6px}
+.step p{font-size:12px;color:#6b7280;line-height:1.5}
+footer{border-top:1px solid #1e2130;padding:30px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:#4b5563;font-size:13px}
+.overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75);z-index:999;align-items:center;justify-content:center}
+.overlay.show{display:flex}
+.popup{background:#16181f;border:1.5px solid #2a2d3e;border-radius:20px;padding:32px;width:100%;max-width:420px;position:relative}
+.popclose{position:absolute;top:14px;right:18px;background:none;border:none;color:#6b7280;font-size:22px;cursor:pointer}
+.popup h2{font-size:20px;font-weight:700;margin-bottom:8px}
+.popup p{font-size:13px;color:#6b7280;line-height:1.7;margin-bottom:0}
+.popicon{font-size:38px;margin-bottom:14px}
+.lbl{font-size:11px;font-weight:600;color:#6b7280;letter-spacing:0.7px;text-transform:uppercase;margin-bottom:8px}
+.phrow{display:flex;gap:8px;margin-bottom:14px}
+.cc{background:#1e2130;border:1.5px solid #2a2d3e;border-radius:10px;padding:0 12px;color:#fff;font-size:13px;display:flex;align-items:center}
+input[type=tel]{flex:1;background:#1e2130;border:1.5px solid #2a2d3e;border-radius:10px;padding:12px 14px;color:#fff;font-size:15px;outline:none;width:100%}
+input[type=tel]:focus{border-color:#00c896}
+input::placeholder{color:#3d4155}
+.mbtn{width:100%;padding:14px;background:#00c896;border:none;border-radius:12px;color:#000;font-size:15px;font-weight:700;cursor:pointer;margin-top:4px}
+.otpboxes{display:flex;gap:10px;justify-content:center;margin-bottom:20px}
+.ob{width:48px;height:56px;background:#1e2130;border:1.5px solid #2a2d3e;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;cursor:text}
+.ob.filled{border-color:#00c896;background:rgba(0,200,150,0.08)}
+.ob.active{border-color:#00c896;box-shadow:0 0 0 3px rgba(0,200,150,0.15)}
+.ob.err{border-color:#ef4444}
+.hint{text-align:center;font-size:11px;color:#4b5563;margin-top:10px}
+.hint b{color:#00c896}
+html{scroll-behavior:smooth}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Tax<span>Setu</span></div>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#how">How it Works</a>
+    <a href="#pricing">Pricing</a>
+  </div>
+  <button class="navbtn" onclick="openLogin()">Get Started Free</button>
+</nav>
+
+<div class="hero">
+  <div class="badge">✦ ICAI-Verified Chartered Accountants</div>
+  <h1>Expert CA advice,<br><span>without the bill.</span></h1>
+  <p>Connect with verified CAs for ITR filing, GST support, and audit defence. Starting at just ₹299/month.</p>
+  <button class="herobtn" onclick="openLogin()">Get Started Free →</button>
+  <button class="herobtn2">Watch Demo</button>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="statnum">80M+</div><div class="statlbl">ITR filers in India</div></div>
+  <div class="stat"><div class="statnum">₹299</div><div class="statlbl">Starting price/month</div></div>
+  <div class="stat"><div class="statnum">1.5L</div><div class="statlbl">Verified CAs available</div></div>
+  <div class="stat"><div class="statnum">24hr</div><div class="statlbl">CA response time</div></div>
+</div>
+
+<div class="section" id="features">
+  <div class="stag">Why TaxSetu</div>
+  <div class="stitle">Everything you need for taxes</div>
+  <div class="ssub">Click any card to learn more 👇</div>
+  <div class="grid">
+    <div class="card" onclick="openF('AI + Human Hybrid','🤖','Our AI engine reads your tax query and automatically routes it to the most suitable verified CA. No more waiting in queues or explaining your problem to the wrong person.')">
+      <div class="cicon">🤖</div><h3>AI + Human Hybrid</h3>
+      <p>AI pre-processes your query and routes it to the right CA specialist.</p>
+      <div class="clickhint">Click to learn more →</div>
+    </div>
+    <div class="card" onclick="openF('ICAI-Verified CAs','✅','Every CA on TaxSetu is verified against the official ICAI registry. We check their Certificate of Practice and registration number. 100% real, qualified Chartered Accountants only.')">
+      <div class="cicon">✅</div><h3>ICAI-Verified CAs</h3>
+      <p>Every CA is verified against the ICAI registry. No fake experts.</p>
+      <div class="clickhint">Click to learn more →</div>
+    </div>
+    <div class="card" onclick="openF('ITR Filing Help','📋','Our CAs guide you through the entire ITR filing process — selecting the right form, finding deductions, reviewing your submission. No more wrong filings, no more penalties.')">
+      <div class="cicon">📋</div><h3>ITR Filing Help</h3>
+      <p>Guided ITR filing with document review and error checking.</p>
+      <div class="clickhint">Click to learn more →</div>
+    </div>
+    <div class="card" onclick="openF('Audit Defence','🛡️','Received an IT notice? Your assigned CA will read the notice, prepare the response, and represent you before the Income Tax department. This unique service is available only on TaxSetu.')">
+      <div class="cicon">🛡️</div><h3>Audit Defence</h3>
+      <p>Got an IT notice? Your CA will represent you completely.</p>
+      <div class="clickhint">Click to learn more →</div>
+    </div>
+    <div class="card" onclick="openF('365-Day Support','📅','Tax questions come up all year. With TaxSetu get support for advance tax, TDS, GST, investments, salary structure — any financial query, any time of year. Your CA is always just a message away.')">
+      <div class="cicon">📅</div><h3>365-Day Support</h3>
+      <p>Not just during tax season. Year-round support always.</p>
+      <div class="clickhint">Click to learn more →</div>
+    </div>
+    <div class="card" onclick="openF('Bank-Grade Security','🔒','Your PAN, Aadhaar and tax documents are encrypted end-to-end. Everything stored on AWS Mumbai servers within India, fully compliant with IT Act 2000 and DPDP Act 2023.')">
+      <div class="cicon">🔒</div><h3>Bank-Grade Security</h3>
+      <p>End-to-end encrypted. AWS Mumbai servers within India.</p>
+      <div class="clickhint">Click to learn more →</div>
+    </div>
+  </div>
+</div>
+
+<div style="background:#16181f;padding:70px 20px" id="how">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="stag">Simple Process</div>
+    <div class="stitle">How TaxSetu works</div>
+    <div class="ssub">From signup to solved in under 24 hours</div>
+    <div class="steps">
+      <div class="step"><div class="stepnum">1</div><h3>Register & Verify</h3><p>Sign up with mobile. Verify PAN for identity.</p></div>
+      <div class="step"><div class="stepnum">2</div><h3>Choose a Plan</h3><p>Pick Basic, Standard or Premium.</p></div>
+      <div class="step"><div class="stepnum">3</div><h3>Ask Your Query</h3><p>Type question or upload tax documents.</p></div>
+      <div class="step"><div class="stepnum">4</div><h3>AI Routes It</h3><p>AI sends query to right CA specialist.</p></div>
+      <div class="step"><div class="stepnum">5</div><h3>CA Responds</h3><p>Verified CA replies within 24 hours.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="pricing">
+  <div class="stag">Affordable Plans</div>
+  <div class="stitle">Simple, transparent pricing</div>
+  <div class="ssub">10x cheaper than visiting a traditional CA</div>
+  <div class="pgrid">
+    <div class="pcard">
+      <div class="pname">Basic</div>
+      <div class="pamt">₹299<small>/mo</small></div>
+      <div class="pper">Billed monthly</div>
+      <ul class="plist">
+        <li><span>✓</span>2 CA consultations/month</li>
+        <li><span>✓</span>ITR filing guidance</li>
+        <li><span>✓</span>AI tax assistant</li>
+        <li><span>✓</span>Email support</li>
+      </ul>
+      <button class="pbtn" onclick="openLogin()">Get Started</button>
+    </div>
+    <div class="pcard pop">
+      <div class="popbadge">⭐ MOST POPULAR</div>
+      <div class="pname">Standard</div>
+      <div class="pamt">₹499<small>/mo</small></div>
+      <div class="pper">Billed monthly</div>
+      <ul class="plist">
+        <li><span>✓</span>5 CA consultations/month</li>
+        <li><span>✓</span>ITR + GST filing</li>
+        <li><span>✓</span>Document review</li>
+        <li><span>✓</span>Priority support</li>
+        <li><span>✓</span>Audit defence (1 notice)</li>
+      </ul>
+      <button class="pbtn" onclick="openLogin()">Get Started</button>
+    </div>
+    <div class="pcard">
+      <div class="pname">Premium</div>
+      <div class="pamt">₹999<small>/mo</small></div>
+      <div class="pper">Billed monthly</div>
+      <ul class="plist">
+        <li><span>✓</span>Unlimited consultations</li>
+        <li><span>✓</span>Dedicated CA assigned</li>
+        <li><span>✓</span>Business tax support</li>
+        <li><span>✓</span>Full audit defence</li>
+        <li><span>✓</span>24/7 priority support</li>
+      </ul>
+      <button class="pbtn" onclick="openLogin()">Get Started</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="logo">Tax<span style="color:#00c896">Setu</span></div>
+  <div>© 2026 TaxSetu — Team Tech Thunders, D Y Patil College Kolhapur</div>
+</footer>
+
+<!-- FEATURE POPUP -->
+<div class="overlay" id="foverlay">
+  <div class="popup">
+    <button class="popclose" onclick="closeF()">✕</button>
+    <div class="popicon" id="ficon"></div>
+    <h2 id="ftitle"></h2>
+    <br>
+    <p id="fdesc"></p>
+  </div>
+</div>
+
+<!-- LOGIN POPUP -->
+<div class="overlay" id="loverlay">
+  <div class="popup">
+    <button class="popclose" onclick="closeLogin()">✕</button>
+    <div id="pscreen">
+      <h2 style="margin-bottom:6px">Get Started</h2>
+      <p style="font-size:13px;color:#6b7280;margin-bottom:22px">Enter mobile number to receive OTP</p>
+      <div class="lbl">Mobile Number</div>
+      <div class="phrow">
+        <div class="cc">🇮🇳 +91</div>
+        <input type="tel" id="ph" maxlength="10" placeholder="98765 43210" oninput="onPh(this)">
+      </div>
+      <button class="mbtn" id="sendbtn" onclick="showOTP()" style="opacity:0.4;pointer-events:none">Send OTP →</button>
+    </div>
+    <div id="oscreen" style="display:none">
+      <h2 style="margin-bottom:6px">Enter OTP</h2>
+      <p style="font-size:13px;color:#6b7280;margin-bottom:22px">Sent to +91 <b id="dph" style="color:#00c896"></b></p>
+      <div class="otpboxes" onclick="focusO()">
+        <div class="ob active" id="o0"></div>
+        <div class="ob" id="o1"></div>
+        <div class="ob" id="o2"></div>
+        <div class="ob" id="o3"></div>
+        <div class="ob" id="o4"></div>
+        <div class="ob" id="o5"></div>
+      </div>
+      <input id="oinp" type="tel" maxlength="6" style="position:fixed;left:-999px" oninput="onO(this)">
+      <button class="mbtn" id="vbtn" onclick="doVerify()" style="opacity:0.4;pointer-events:none">Verify & Continue →</button>
+      <p class="hint">Demo: type <b>123456</b></p>
+    </div>
+    <div id="sscreen" style="display:none;text-align:center">
+      <div style="font-size:48px;margin-bottom:14px">🎉</div>
+      <h2 style="margin-bottom:8px">You're verified!</h2>
+      <p style="font-size:13px;color:#6b7280;margin-bottom:22px">Welcome to TaxSetu!</p>
+      <button class="mbtn" onclick="closeLogin()">Go to Dashboard →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var otpval='';
+
+function openF(title,icon,desc){
+  document.getElementById('ficon').textContent=icon;
+  document.getElementById('ftitle').textContent=title;
+  document.getElementById('fdesc').textContent=desc;
+  document.getElementById('foverlay').classList.add('show');
+}
+function closeF(){document.getElementById('foverlay').classList.remove('show');}
+
+function openLogin(){
+  document.getElementById('loverlay').classList.add('show');
+  document.getElementById('pscreen').style.display='block';
+  document.getElementById('oscreen').style.display='none';
+  document.getElementById('sscreen').style.display='none';
+}
+function closeLogin(){document.getElementById('loverlay').classList.remove('show');}
+
+function onPh(el){
+  var v=el.value.replace(/\D/g,'');el.value=v;
+  var b=document.getElementById('sendbtn');
+  if(v.length===10){b.style.opacity='1';b.style.pointerEvents='auto';}
+  else{b.style.opacity='0.4';b.style.pointerEvents='none';}
+}
+function showOTP(){
+  var ph=document.getElementById('ph').value;
+  document.getElementById('dph').textContent=ph;
+  document.getElementById('pscreen').style.display='none';
+  document.getElementById('oscreen').style.display='block';
+  otpval='';document.getElementById('oinp').value='';
+  for(var i=0;i<6;i++){var b=document.getElementById('o'+i);b.textContent='';b.className='ob';}
+  document.getElementById('o0').classList.add('active');
+  setTimeout(focusO,100);
+}
+function focusO(){document.getElementById('oinp').focus();}
+function onO(el){
+  var v=el.value.replace(/\D/g,'').slice(0,6);el.value=v;otpval=v;
+  for(var i=0;i<6;i++){
+    var b=document.getElementById('o'+i);b.className='ob';
+    if(i<v.length){b.textContent=v[i];b.classList.add('filled');}
+    else b.textContent='';
+    if(i===v.length&&i<6)b.classList.add('active');
+  }
+  var vb=document.getElementById('vbtn');
+  if(v.length===6){vb.style.opacity='1';vb.style.pointerEvents='auto';}
+  else{vb.style.opacity='0.4';vb.style.pointerEvents='none';}
+}
+function doVerify(){
+  if(otpval==='123456'){
+    document.getElementById('oscreen').style.display='none';
+    document.getElementById('sscreen').style.display='block';
+  } else {
+    for(var i=0;i<6;i++)document.getElementById('o'+i).classList.add('err');
+    setTimeout(function(){
+      document.getElementById('oinp').value='';otpval='';
+      onO(document.getElementById('oinp'));
+      for(var i=0;i<6;i++)document.getElementById('o'+i).classList.remove('err');
+    },700);
+  }
+}
+window.onclick=function(e){
+  if(e.target===document.getElementById('foverlay'))closeF();
+  if(e.target===document.getElementById('loverlay'))closeLogin();
+}
+</script>
+</body>
+</html>
