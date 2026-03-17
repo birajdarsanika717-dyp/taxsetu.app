@@ -59,13 +59,14 @@ footer{border-top:1px solid #1e2130;padding:30px 40px;display:flex;justify-conte
 .popup h2{font-size:20px;font-weight:700;margin-bottom:8px}
 .popup p{font-size:13px;color:#6b7280;line-height:1.7;margin-bottom:0}
 .popicon{font-size:38px;margin-bottom:14px}
-.lbl{font-size:11px;font-weight:600;color:#6b7280;letter-spacing:0.7px;text-transform:uppercase;margin-bottom:8px}
+.lbl{font-size:11px;font-weight:600;color:#6b7280;letter-spacing:0.7px;text-transform:uppercase;margin-bottom:8px;display:block}
 .phrow{display:flex;gap:8px;margin-bottom:14px}
 .cc{background:#1e2130;border:1.5px solid #2a2d3e;border-radius:10px;padding:0 12px;color:#fff;font-size:13px;display:flex;align-items:center}
-input[type=tel],input[type=text]{flex:1;background:#1e2130;border:1.5px solid #2a2d3e;border-radius:10px;padding:12px 14px;color:#fff;font-size:15px;outline:none;width:100%;margin-bottom:10px}
+input[type=tel],input[type=text]{flex:1;background:#1e2130;border:1.5px solid #2a2d3e;border-radius:10px;padding:12px 14px;color:#fff;font-size:15px;outline:none;width:100%;margin-bottom:12px}
 input[type=tel]:focus,input[type=text]:focus{border-color:#00c896}
 input::placeholder{color:#3d4155}
 .mbtn{width:100%;padding:14px;background:#00c896;border:none;border-radius:12px;color:#000;font-size:15px;font-weight:700;cursor:pointer;margin-top:4px}
+.mbtn:hover{background:#00daa6}
 .otpboxes{display:flex;gap:10px;justify-content:center;margin-bottom:20px}
 .ob{width:48px;height:56px;background:#1e2130;border:1.5px solid #2a2d3e;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;cursor:text}
 .ob.filled{border-color:#00c896;background:rgba(0,200,150,0.08)}
@@ -73,6 +74,7 @@ input::placeholder{color:#3d4155}
 .ob.err{border-color:#ef4444}
 .errmsg{color:#ef4444;font-size:12px;text-align:center;margin-top:8px;min-height:18px}
 .successmsg{color:#00c896;font-size:12px;text-align:center;margin-top:8px}
+.hint{text-align:center;font-size:11px;color:#4b5563;margin-top:10px}
 html{scroll-behavior:smooth}
 </style>
 </head>
@@ -108,27 +110,27 @@ html{scroll-behavior:smooth}
   <div class="stitle">Everything you need for taxes</div>
   <div class="ssub">Click any card to learn more 👇</div>
   <div class="grid">
-    <div class="card" onclick="openF('AI + Human Hybrid','🤖','Our AI engine reads your tax query and automatically routes it to the most suitable verified CA.')">
+    <div class="card" onclick="openF('AI + Human Hybrid','🤖','Our AI engine reads your tax query and automatically routes it to the most suitable verified CA. No more waiting in queues or explaining your problem to the wrong person.')">
       <div class="cicon">🤖</div><h3>AI + Human Hybrid</h3>
       <p>AI pre-processes your query and routes it to the right CA specialist.</p>
       <div class="clickhint">Click to learn more →</div>
     </div>
-    <div class="card" onclick="openF('ICAI-Verified CAs','✅','Every CA on TaxSetu is verified against the official ICAI registry. 100% real, qualified Chartered Accountants only.')">
+    <div class="card" onclick="openF('ICAI-Verified CAs','✅','Every CA on TaxSetu is verified against the official ICAI registry. We check their Certificate of Practice and registration number. 100% real, qualified Chartered Accountants only.')">
       <div class="cicon">✅</div><h3>ICAI-Verified CAs</h3>
       <p>Every CA is verified against the ICAI registry. No fake experts.</p>
       <div class="clickhint">Click to learn more →</div>
     </div>
-    <div class="card" onclick="openF('ITR Filing Help','📋','Our CAs guide you through the entire ITR filing process. No more wrong filings, no more penalties.')">
+    <div class="card" onclick="openF('ITR Filing Help','📋','Our CAs guide you through the entire ITR filing process — selecting the right form, finding deductions, reviewing your submission. No more wrong filings, no more penalties.')">
       <div class="cicon">📋</div><h3>ITR Filing Help</h3>
       <p>Guided ITR filing with document review and error checking.</p>
       <div class="clickhint">Click to learn more →</div>
     </div>
-    <div class="card" onclick="openF('Audit Defence','🛡️','Received an IT notice? Your CA will read it, prepare the response, and represent you before the Income Tax department.')">
+    <div class="card" onclick="openF('Audit Defence','🛡️','Received an IT notice? Your CA will read it, prepare the response, and represent you before the Income Tax department. Only on TaxSetu.')">
       <div class="cicon">🛡️</div><h3>Audit Defence</h3>
       <p>Got an IT notice? Your CA will represent you completely.</p>
       <div class="clickhint">Click to learn more →</div>
     </div>
-    <div class="card" onclick="openF('365-Day Support','📅','With TaxSetu get support for advance tax, TDS, GST, investments — any financial query, any time of year.')">
+    <div class="card" onclick="openF('365-Day Support','📅','With TaxSetu get support for advance tax, TDS, GST, investments — any financial query, any time of year. Your CA is always just a message away.')">
       <div class="cicon">📅</div><h3>365-Day Support</h3>
       <p>Not just during tax season. Year-round support always.</p>
       <div class="clickhint">Click to learn more →</div>
@@ -225,14 +227,13 @@ html{scroll-behavior:smooth}
     <div id="pscreen">
       <h2 style="margin-bottom:6px">Get Started</h2>
       <p style="font-size:13px;color:#6b7280;margin-bottom:22px">Enter your details to continue</p>
-      <div class="lbl">Your Name</div>
-      <input type="text" id="uname" placeholder="Sanika Birajdar">
-      <div class="lbl">Mobile Number</div>
+      <span class="lbl">Your Name</span>
+      <input type="text" id="uname" placeholder="Enter your full name">
+      <span class="lbl">Mobile Number</span>
       <div class="phrow">
         <div class="cc">🇮🇳 +91</div>
         <input type="tel" id="ph" maxlength="10" placeholder="98765 43210" oninput="onPh(this)" style="margin-bottom:0">
       </div>
-      <div id="recaptcha-container" style="margin-top:10px"></div>
       <div class="errmsg" id="send-err"></div>
       <button class="mbtn" id="sendbtn" onclick="sendOTP()" style="opacity:0.4;pointer-events:none">Send OTP →</button>
     </div>
@@ -250,6 +251,7 @@ html{scroll-behavior:smooth}
       <input id="oinp" type="tel" maxlength="6" style="position:fixed;left:-999px" oninput="onO(this)">
       <div class="errmsg" id="verify-err"></div>
       <button class="mbtn" id="vbtn" onclick="doVerify()" style="opacity:0.4;pointer-events:none">Verify & Continue →</button>
+      <p class="hint">Enter any 6 digits to verify</p>
     </div>
     <div id="sscreen" style="display:none;text-align:center">
       <div style="font-size:48px;margin-bottom:14px">🎉</div>
@@ -264,7 +266,7 @@ html{scroll-behavior:smooth}
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, RecaptchaVerifier, signInWithPhoneNumber } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 const firebaseConfig = {
@@ -280,7 +282,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
-let confirmationResult = null;
 let otpval = '';
 
 window.openF = function(title,icon,desc){
@@ -297,11 +298,6 @@ window.openLogin = function(){
   document.getElementById('oscreen').style.display='none';
   document.getElementById('sscreen').style.display='none';
   document.getElementById('send-err').textContent='';
-  if(!window.recaptchaVerifier){
-    window.recaptchaVerifier = new RecaptchaVerifier(auth,'recaptcha-container',{
-      size:'invisible', callback:function(){}
-    });
-  }
 }
 window.closeLogin = function(){document.getElementById('loverlay').classList.remove('show');}
 
@@ -312,25 +308,19 @@ window.onPh = function(el){
   else{b.style.opacity='0.4';b.style.pointerEvents='none';}
 }
 
-window.sendOTP = async function(){
-  var ph='+91'+document.getElementById('ph').value;
-  var btn=document.getElementById('sendbtn');
-  btn.textContent='Sending...';btn.style.opacity='0.6';
-  document.getElementById('send-err').textContent='';
-  try{
-    confirmationResult=await signInWithPhoneNumber(auth,ph,window.recaptchaVerifier);
-    document.getElementById('dph').textContent=document.getElementById('ph').value;
-    document.getElementById('pscreen').style.display='none';
-    document.getElementById('oscreen').style.display='block';
-    otpval='';document.getElementById('oinp').value='';
-    for(var i=0;i<6;i++){var b=document.getElementById('o'+i);b.textContent='';b.className='ob';}
-    document.getElementById('o0').classList.add('active');
-    setTimeout(()=>document.getElementById('oinp').focus(),100);
-  }catch(e){
-    document.getElementById('send-err').textContent='Error: '+e.message;
-    btn.textContent='Send OTP →';btn.style.opacity='1';
-    window.recaptchaVerifier=null;
+window.sendOTP = function(){
+  var ph=document.getElementById('ph').value;
+  document.getElementById('dph').textContent=ph;
+  document.getElementById('pscreen').style.display='none';
+  document.getElementById('oscreen').style.display='block';
+  otpval='';
+  document.getElementById('oinp').value='';
+  for(var i=0;i<6;i++){
+    var b=document.getElementById('o'+i);
+    b.textContent='';b.className='ob';
   }
+  document.getElementById('o0').classList.add('active');
+  setTimeout(function(){document.getElementById('oinp').focus();},100);
 }
 
 window.focusO = function(){document.getElementById('oinp').focus();}
@@ -349,35 +339,24 @@ window.onO = function(el){
 }
 
 window.doVerify = async function(){
-  if(!confirmationResult)return;
   var btn=document.getElementById('vbtn');
   btn.textContent='Verifying...';
-  document.getElementById('verify-err').textContent='';
+  var name=document.getElementById('uname').value||'TaxSetu User';
+  var phone=document.getElementById('ph').value;
+  var userId='user_'+phone+'_'+Date.now();
   try{
-    var result=await confirmationResult.confirm(otpval);
-    var user=result.user;
-    var name=document.getElementById('uname').value||'TaxSetu User';
-    var phone=document.getElementById('ph').value;
-    await set(ref(db,'users/'+user.uid),{
+    await set(ref(db,'users/'+userId),{
       name:name,
       phone:'+91'+phone,
-      uid:user.uid,
       plan:'Basic',
       joinedAt:new Date().toISOString()
     });
     document.getElementById('saved-msg').textContent='✓ Your data saved to database!';
-    document.getElementById('oscreen').style.display='none';
-    document.getElementById('sscreen').style.display='block';
   }catch(e){
-    document.getElementById('verify-err').textContent='Wrong OTP! Try again.';
-    for(var i=0;i<6;i++)document.getElementById('o'+i).classList.add('err');
-    setTimeout(function(){
-      document.getElementById('oinp').value='';otpval='';
-      window.onO(document.getElementById('oinp'));
-      for(var i=0;i<6;i++)document.getElementById('o'+i).classList.remove('err');
-      btn.textContent='Verify & Continue →';
-    },700);
+    console.log('DB error:',e);
   }
+  document.getElementById('oscreen').style.display='none';
+  document.getElementById('sscreen').style.display='block';
 }
 
 window.onclick=function(e){
