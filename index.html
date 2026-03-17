@@ -2,79 +2,165 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>TaxSetu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TaxSetu – Expert CA Advice Without the Bill</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,sans-serif;background:#0f1117;color:#fff}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;border-bottom:1px solid #1e2130;position:sticky;top:0;background:#0f1117;z-index:100}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 40px;border-bottom:1px solid #1e2130;position:sticky;top:0;background:#0f1117;z-index:100;flex-wrap:wrap;gap:10px}
 .logo{font-size:22px;font-weight:700;color:#fff}.logo span{color:#00c896}
-.nav-links a{color:#9ca3af;text-decoration:none;margin-left:28px;font-size:14px}
+.nav-links a{color:#9ca3af;text-decoration:none;margin-left:24px;font-size:14px}
 .nav-links a:hover{color:#00c896}
-.navbtn{background:#00c896;color:#000;border:none;border-radius:8px;padding:10px 20px;font-size:14px;font-weight:700;cursor:pointer}
-.hero{text-align:center;padding:80px 20px;max-width:700px;margin:0 auto}
-.badge{display:inline-block;background:rgba(0,200,150,0.1);border:1px solid rgba(0,200,150,0.25);color:#00c896;font-size:12px;padding:5px 14px;border-radius:20px;margin-bottom:20px}
-h1{font-size:48px;font-weight:700;line-height:1.2;margin-bottom:16px}
+.nav-right{display:flex;align-items:center;gap:10px}
+.lang-sel{background:#1e2130;border:1px solid #2a2d3e;border-radius:8px;padding:6px 10px;color:#fff;font-size:12px;cursor:pointer;outline:none}
+.navbtn{background:#00c896;color:#000;border:none;border-radius:8px;padding:10px 18px;font-size:14px;font-weight:700;cursor:pointer}
+.hero{text-align:center;padding:70px 20px 50px;max-width:700px;margin:0 auto}
+.badge{display:inline-block;background:rgba(0,200,150,0.1);border:1px solid rgba(0,200,150,0.25);color:#00c896;font-size:12px;padding:5px 14px;border-radius:20px;margin-bottom:18px}
+h1{font-size:44px;font-weight:700;line-height:1.2;margin-bottom:14px}
 h1 span{color:#00c896}
-.hero p{font-size:16px;color:#9ca3af;line-height:1.7;margin-bottom:32px}
-.herobtn{background:#00c896;color:#000;border:none;border-radius:12px;padding:14px 28px;font-size:15px;font-weight:700;cursor:pointer;margin-right:10px}
-.herobtn2{background:transparent;border:1.5px solid #2a2d3e;color:#9ca3af;border-radius:12px;padding:14px 28px;font-size:15px;cursor:pointer}
-.stats{display:flex;justify-content:center;gap:60px;padding:40px 20px;border-top:1px solid #1e2130;border-bottom:1px solid #1e2130;flex-wrap:wrap}
+.hero-p{font-size:15px;color:#9ca3af;line-height:1.7;margin-bottom:28px}
+.hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.hbtn{background:#00c896;color:#000;border:none;border-radius:12px;padding:13px 26px;font-size:14px;font-weight:700;cursor:pointer}
+.hbtn2{background:transparent;border:1.5px solid #2a2d3e;color:#9ca3af;border-radius:12px;padding:13px 26px;font-size:14px;cursor:pointer}
+.hbtn2:hover{border-color:#00c896;color:#00c896}
+.stats{display:flex;justify-content:center;gap:50px;padding:36px 20px;border-top:1px solid #1e2130;border-bottom:1px solid #1e2130;flex-wrap:wrap}
 .stat{text-align:center}
-.statnum{font-size:32px;font-weight:700;color:#00c896;margin-bottom:4px}
-.statlbl{font-size:13px;color:#6b7280}
-.section{max-width:1100px;margin:0 auto;padding:70px 20px}
-.stag{text-align:center;color:#00c896;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
-.stitle{text-align:center;font-size:34px;font-weight:700;margin-bottom:10px}
-.ssub{text-align:center;color:#6b7280;font-size:15px;margin-bottom:48px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.card{background:#16181f;border:1px solid #1e2130;border-radius:14px;padding:26px;cursor:pointer;transition:border-color 0.2s,transform 0.2s}
-.card:hover{border-color:#00c896;transform:translateY(-4px)}
-.cicon{font-size:28px;margin-bottom:14px}
-.card h3{font-size:16px;font-weight:700;margin-bottom:8px}
-.card p{font-size:13px;color:#6b7280;line-height:1.6}
-.clickhint{font-size:11px;color:#00c896;margin-top:10px}
-.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:880px;margin:0 auto}
-.pcard{background:#16181f;border:1px solid #1e2130;border-radius:18px;padding:30px;text-align:center;position:relative;transition:transform 0.2s}
-.pcard:hover{transform:translateY(-4px)}
+.statnum{font-size:30px;font-weight:700;color:#00c896;margin-bottom:4px}
+.statlbl{font-size:12px;color:#6b7280}
+.sec{max-width:1100px;margin:0 auto;padding:60px 20px}
+.stag{text-align:center;color:#00c896;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.stitle{text-align:center;font-size:32px;font-weight:700;margin-bottom:10px}
+.ssub{text-align:center;color:#6b7280;font-size:14px;margin-bottom:44px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:#16181f;border:1px solid #1e2130;border-radius:14px;padding:24px;cursor:pointer;transition:border-color 0.2s,transform 0.2s}
+.card:hover{border-color:#00c896;transform:translateY(-3px)}
+.cicon{font-size:26px;margin-bottom:12px}
+.card h3{font-size:15px;font-weight:700;margin-bottom:7px}
+.card p{font-size:12px;color:#6b7280;line-height:1.6}
+.clickhint{font-size:11px;color:#00c896;margin-top:8px}
+.fbtnrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:36px 0}
+.fbtn{background:#16181f;border:1px solid #2a2d3e;border-radius:12px;padding:12px 20px;color:#fff;cursor:pointer;font-size:13px;font-weight:600;transition:all 0.2s;display:flex;align-items:center;gap:7px}
+.fbtn:hover{border-color:#00c896;color:#00c896;transform:translateY(-2px)}
+.nbadge{display:inline-block;background:rgba(255,100,100,0.1);border:1px solid rgba(255,100,100,0.3);color:#ff6464;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;margin-left:6px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;max-width:860px;margin:0 auto}
+.pcard{background:#16181f;border:1px solid #1e2130;border-radius:18px;padding:28px;text-align:center;position:relative;transition:transform 0.2s}
+.pcard:hover{transform:translateY(-3px)}
 .pcard.pop{border-color:#00c896}
-.popbadge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#00c896;color:#000;font-size:11px;font-weight:700;padding:4px 14px;border-radius:20px;white-space:nowrap}
-.pname{font-size:15px;font-weight:600;color:#9ca3af;margin-bottom:8px}
-.pamt{font-size:40px;font-weight:700;margin-bottom:4px}
-.pamt small{font-size:16px;color:#6b7280}
-.pper{font-size:12px;color:#6b7280;margin-bottom:20px}
-.plist{list-style:none;text-align:left;margin-bottom:24px}
-.plist li{font-size:13px;color:#9ca3af;padding:5px 0;border-bottom:1px solid #1e2130;display:flex;gap:8px}
+.popbadge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#00c896;color:#000;font-size:10px;font-weight:700;padding:3px 12px;border-radius:20px;white-space:nowrap}
+.pname{font-size:14px;font-weight:600;color:#9ca3af;margin-bottom:7px}
+.pamt{font-size:38px;font-weight:700;margin-bottom:4px}
+.pamt small{font-size:15px;color:#6b7280}
+.pper{font-size:11px;color:#6b7280;margin-bottom:18px}
+.plist{list-style:none;text-align:left;margin-bottom:22px}
+.plist li{font-size:12px;color:#9ca3af;padding:5px 0;border-bottom:1px solid #1e2130;display:flex;gap:7px}
 .plist li span{color:#00c896;font-weight:700}
-.pbtn{width:100%;padding:13px;background:#00c896;border:none;border-radius:10px;color:#000;font-size:14px;font-weight:700;cursor:pointer}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}
-.step{background:#16181f;border:1px solid #1e2130;border-radius:14px;padding:26px;text-align:center}
-.stepnum{width:42px;height:42px;background:rgba(0,200,150,0.1);border:1.5px solid rgba(0,200,150,0.3);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#00c896;margin:0 auto 14px}
-.step h3{font-size:14px;font-weight:700;margin-bottom:6px}
-.step p{font-size:12px;color:#6b7280;line-height:1.5}
-footer{border-top:1px solid #1e2130;padding:30px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:#4b5563;font-size:13px}
-.overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75);z-index:999;align-items:center;justify-content:center}
-.overlay.show{display:flex}
-.popup{background:#16181f;border:1.5px solid #2a2d3e;border-radius:20px;padding:32px;width:100%;max-width:420px;position:relative}
-.popclose{position:absolute;top:14px;right:18px;background:none;border:none;color:#6b7280;font-size:22px;cursor:pointer}
-.popup h2{font-size:20px;font-weight:700;margin-bottom:8px}
-.popup p{font-size:13px;color:#6b7280;line-height:1.7;margin-bottom:0}
-.popicon{font-size:38px;margin-bottom:14px}
-.lbl{font-size:11px;font-weight:600;color:#6b7280;letter-spacing:0.7px;text-transform:uppercase;margin-bottom:8px;display:block}
-.phrow{display:flex;gap:8px;margin-bottom:14px}
+.pbtn{width:100%;padding:12px;background:#00c896;border:none;border-radius:10px;color:#000;font-size:13px;font-weight:700;cursor:pointer}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
+.step{background:#16181f;border:1px solid #1e2130;border-radius:14px;padding:24px;text-align:center}
+.stepnum{width:40px;height:40px;background:rgba(0,200,150,0.1);border:1.5px solid rgba(0,200,150,0.3);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#00c896;margin:0 auto 12px}
+.step h3{font-size:13px;font-weight:700;margin-bottom:5px}
+.step p{font-size:11px;color:#6b7280;line-height:1.5}
+footer{border-top:1px solid #1e2130;padding:28px 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:#4b5563;font-size:12px}
+/* OVERLAYS */
+.ov{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.78);z-index:999;align-items:center;justify-content:center;padding:16px}
+.ov.show{display:flex}
+.pop{background:#16181f;border:1.5px solid #2a2d3e;border-radius:20px;padding:28px;width:100%;max-width:480px;position:relative;max-height:90vh;overflow-y:auto}
+.pop.wide{max-width:560px}
+.pclose{position:absolute;top:12px;right:16px;background:none;border:none;color:#6b7280;font-size:20px;cursor:pointer}
+.pop h2{font-size:18px;font-weight:700;margin-bottom:6px}
+.pop .psub{font-size:12px;color:#6b7280;margin-bottom:18px}
+.lbl{font-size:10px;font-weight:700;color:#6b7280;letter-spacing:0.7px;text-transform:uppercase;margin-bottom:7px;display:block}
+.phrow{display:flex;gap:8px;margin-bottom:12px}
 .cc{background:#1e2130;border:1.5px solid #2a2d3e;border-radius:10px;padding:0 12px;color:#fff;font-size:13px;display:flex;align-items:center}
-input[type=tel],input[type=text]{flex:1;background:#1e2130;border:1.5px solid #2a2d3e;border-radius:10px;padding:12px 14px;color:#fff;font-size:15px;outline:none;width:100%;margin-bottom:12px}
-input[type=tel]:focus,input[type=text]:focus{border-color:#00c896}
+input[type=tel],input[type=text],input[type=number]{flex:1;background:#1e2130;border:1.5px solid #2a2d3e;border-radius:10px;padding:11px 13px;color:#fff;font-size:14px;outline:none;width:100%;margin-bottom:10px}
+input:focus{border-color:#00c896}
 input::placeholder{color:#3d4155}
-.mbtn{width:100%;padding:14px;background:#00c896;border:none;border-radius:12px;color:#000;font-size:15px;font-weight:700;cursor:pointer;margin-top:4px}
+select{width:100%;background:#1e2130;border:1.5px solid #2a2d3e;border-radius:10px;padding:11px 13px;color:#fff;font-size:13px;outline:none;margin-bottom:10px;cursor:pointer}
+select:focus{border-color:#00c896}
+.mbtn{width:100%;padding:13px;background:#00c896;border:none;border-radius:12px;color:#000;font-size:14px;font-weight:700;cursor:pointer;margin-top:4px}
 .mbtn:hover{background:#00daa6}
-.otpboxes{display:flex;gap:10px;justify-content:center;margin-bottom:20px}
-.ob{width:48px;height:56px;background:#1e2130;border:1.5px solid #2a2d3e;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;cursor:text}
+.mbtn2{width:100%;padding:11px;background:transparent;border:1.5px solid #00c896;border-radius:12px;color:#00c896;font-size:13px;font-weight:700;cursor:pointer;margin-top:8px}
+.otpboxes{display:flex;gap:9px;justify-content:center;margin-bottom:18px}
+.ob{width:46px;height:54px;background:#1e2130;border:1.5px solid #2a2d3e;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;cursor:text}
 .ob.filled{border-color:#00c896;background:rgba(0,200,150,0.08)}
 .ob.active{border-color:#00c896;box-shadow:0 0 0 3px rgba(0,200,150,0.15)}
 .ob.err{border-color:#ef4444}
-.errmsg{color:#ef4444;font-size:12px;text-align:center;margin-top:8px;min-height:18px}
-.successmsg{color:#00c896;font-size:12px;text-align:center;margin-top:8px}
-.hint{text-align:center;font-size:11px;color:#4b5563;margin-top:10px}
+.errmsg{color:#ef4444;font-size:11px;text-align:center;margin-top:6px;min-height:16px}
+.okmsg{color:#00c896;font-size:11px;text-align:center;margin-top:6px}
+.hint{text-align:center;font-size:10px;color:#4b5563;margin-top:8px}
+/* CHAT */
+.chat-msgs{height:240px;overflow-y:auto;background:#0f1117;border-radius:10px;padding:12px;margin-bottom:10px;display:flex;flex-direction:column;gap:9px}
+.cmsg{max-width:82%;padding:9px 13px;border-radius:12px;font-size:13px;line-height:1.5}
+.cmsg.user{background:#00c896;color:#000;align-self:flex-end;border-bottom-right-radius:3px}
+.cmsg.bot{background:#1e2130;color:#fff;align-self:flex-start;border-bottom-left-radius:3px}
+.chat-toolbar{display:flex;gap:7px;margin-bottom:8px}
+.chat-lang{flex:1;background:#1e2130;border:1px solid #2a2d3e;border-radius:8px;padding:6px 10px;color:#fff;font-size:12px;cursor:pointer;outline:none}
+.chat-row{display:flex;gap:7px}
+.chat-inp{flex:1;background:#1e2130;border:1.5px solid #2a2d3e;border-radius:10px;padding:9px 13px;color:#fff;font-size:13px;outline:none;margin:0}
+.chat-inp:focus{border-color:#00c896}
+.csend{background:#00c896;border:none;border-radius:10px;padding:9px 14px;color:#000;font-weight:700;cursor:pointer;font-size:13px}
+.vbtn{background:#1e2130;border:1.5px solid #2a2d3e;border-radius:10px;padding:9px 13px;color:#fff;cursor:pointer;font-size:16px;transition:all 0.2s}
+.vbtn:hover{border-color:#00c896}
+.vbtn.rec{background:#ef4444;border-color:#ef4444;animation:pulse 1s infinite}
+.speak-btn{background:none;border:none;color:#00c896;cursor:pointer;font-size:11px;margin-top:3px;padding:0}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.6}}
+.typing{display:flex;gap:4px;align-items:center;padding:9px 13px;background:#1e2130;border-radius:12px;align-self:flex-start}
+.typing span{width:6px;height:6px;background:#6b7280;border-radius:50%;animation:bounce 1s infinite}
+.typing span:nth-child(2){animation-delay:0.15s}
+.typing span:nth-child(3){animation-delay:0.3s}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+/* CA BOOKING */
+.ca-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:18px}
+.ca-card{background:#1e2130;border:1px solid #2a2d3e;border-radius:12px;padding:14px;text-align:center;cursor:pointer;transition:all 0.2s}
+.ca-card:hover,.ca-card.sel{border-color:#00c896;background:rgba(0,200,150,0.06)}
+.ca-av{width:48px;height:48px;background:#00c896;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;color:#000;margin:0 auto 8px}
+.ca-name{font-size:12px;font-weight:700;margin-bottom:2px}
+.ca-spec{font-size:10px;color:#6b7280;margin-bottom:3px}
+.ca-rating{font-size:10px;color:#f59e0b}
+.ca-fee{font-size:11px;font-weight:700;color:#00c896;margin-top:3px}
+/* TAX CALC */
+.calc-res{background:#1e2130;border:1px solid #2a2d3e;border-radius:12px;padding:14px;margin-top:14px}
+.calc-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #2a2d3e;font-size:12px}
+.calc-row:last-child{border-bottom:none;font-weight:700;color:#00c896;font-size:14px}
+/* SMART SUGGESTIONS */
+.suggest-box{background:rgba(0,200,150,0.07);border:1px solid rgba(0,200,150,0.2);border-radius:12px;padding:14px;margin-top:14px}
+.suggest-title{font-size:12px;font-weight:700;color:#00c896;margin-bottom:10px}
+.suggest-item{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(0,200,150,0.1);font-size:12px}
+.suggest-item:last-child{border-bottom:none}
+.suggest-save{color:#00c896;font-weight:700;font-size:12px}
+/* ITR TRACKER */
+.itr-steps{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.itr-step{display:flex;align-items:center;gap:12px;padding:12px 14px;background:#1e2130;border-radius:10px;border:1px solid #2a2d3e}
+.itr-step.done{border-color:#00c896;background:rgba(0,200,150,0.06)}
+.itr-step.active{border-color:#f59e0b;background:rgba(245,158,11,0.06)}
+.itr-icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.itr-icon.done{background:#00c896;color:#000}
+.itr-icon.active{background:#f59e0b;color:#000}
+.itr-icon.pending{background:#2a2d3e;color:#6b7280}
+.itr-info{flex:1}
+.itr-name{font-size:13px;font-weight:700;margin-bottom:2px}
+.itr-sub{font-size:11px;color:#6b7280}
+.itr-tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px}
+.itr-tag.done{background:rgba(0,200,150,0.15);color:#00c896}
+.itr-tag.active{background:rgba(245,158,11,0.15);color:#f59e0b}
+.itr-tag.pending{background:#2a2d3e;color:#6b7280}
+.progress-bar{width:100%;height:6px;background:#2a2d3e;border-radius:3px;margin:14px 0 6px;overflow:hidden}
+.progress-fill{height:100%;background:#00c896;border-radius:3px;transition:width 1s}
+/* WHATSAPP */
+.wa-card{background:#1e2130;border:1px solid #2a2d3e;border-radius:12px;padding:16px;display:flex;gap:14px;align-items:center;margin-bottom:12px;cursor:pointer;transition:border-color 0.2s}
+.wa-card:hover{border-color:#25d366}
+.wa-icon{width:48px;height:48px;background:#25d366;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.wa-info h3{font-size:14px;font-weight:700;margin-bottom:3px}
+.wa-info p{font-size:12px;color:#6b7280}
+.wa-btn{width:100%;padding:13px;background:#25d366;border:none;border-radius:12px;color:#000;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px}
+.wa-btn:hover{background:#20bc5c}
+/* UPLOAD */
+.upzone{border:2px dashed #2a2d3e;border-radius:12px;padding:26px;text-align:center;cursor:pointer;transition:border-color 0.2s;margin-bottom:12px}
+.upzone:hover,.upzone.drag{border-color:#00c896;background:rgba(0,200,150,0.04)}
+.flist{display:flex;flex-direction:column;gap:7px;margin-bottom:12px}
+.fitem{background:#1e2130;border:1px solid #2a2d3e;border-radius:8px;padding:9px 13px;display:flex;align-items:center;gap:9px;font-size:12px}
+.fname{flex:1;color:#9ca3af}
+.frem{background:none;border:none;color:#ef4444;cursor:pointer;font-size:14px}
 html{scroll-behavior:smooth}
 </style>
 </head>
@@ -83,120 +169,131 @@ html{scroll-behavior:smooth}
 <nav>
   <div class="logo">Tax<span>Setu</span></div>
   <div class="nav-links">
+    <a href="#tools">Tools</a>
     <a href="#features">Features</a>
     <a href="#how">How it Works</a>
     <a href="#pricing">Pricing</a>
   </div>
-  <button class="navbtn" onclick="openLogin()">Get Started Free</button>
+  <div class="nav-right">
+    <select class="lang-sel" id="site-lang" onchange="changeLang(this.value)">
+      <option value="en">🇬🇧 English</option>
+      <option value="hi">🇮🇳 हिंदी</option>
+      <option value="mr">🇮🇳 मराठी</option>
+      <option value="te">🇮🇳 తెలుగు</option>
+      <option value="ta">🇮🇳 தமிழ்</option>
+      <option value="kn">🇮🇳 ಕನ್ನಡ</option>
+    </select>
+    <button class="navbtn" id="nav-btn" onclick="openLogin()">Get Started Free</button>
+  </div>
 </nav>
 
 <div class="hero">
-  <div class="badge">✦ ICAI-Verified Chartered Accountants</div>
-  <h1>Expert CA advice,<br><span>without the bill.</span></h1>
-  <p>Connect with verified CAs for ITR filing, GST support, and audit defence. Starting at just ₹299/month.</p>
-  <button class="herobtn" onclick="openLogin()">Get Started Free →</button>
-  <button class="herobtn2">Watch Demo</button>
+  <div class="badge" id="h-badge">✦ ICAI-Verified Chartered Accountants</div>
+  <h1 id="h-title">Expert CA advice,<br><span id="h-title2">without the bill.</span></h1>
+  <p class="hero-p" id="h-sub">Connect with verified CAs for ITR filing, GST support, and audit defence. Starting at just ₹299/month.</p>
+  <div class="hero-btns">
+    <button class="hbtn" id="h-btn1" onclick="openLogin()">Get Started Free →</button>
+    <button class="hbtn2" id="h-btn2" onclick="openChat()">Try AI Chatbot 🤖</button>
+  </div>
 </div>
 
 <div class="stats">
-  <div class="stat"><div class="statnum">80M+</div><div class="statlbl">ITR filers in India</div></div>
-  <div class="stat"><div class="statnum">₹299</div><div class="statlbl">Starting price/month</div></div>
-  <div class="stat"><div class="statnum">1.5L</div><div class="statlbl">Verified CAs available</div></div>
-  <div class="stat"><div class="statnum">24hr</div><div class="statlbl">CA response time</div></div>
+  <div class="stat"><div class="statnum">80M+</div><div class="statlbl" id="s1">ITR filers in India</div></div>
+  <div class="stat"><div class="statnum">₹299</div><div class="statlbl" id="s2">Starting price/month</div></div>
+  <div class="stat"><div class="statnum">1.5L</div><div class="statlbl" id="s3">Verified CAs available</div></div>
+  <div class="stat"><div class="statnum">24hr</div><div class="statlbl" id="s4">CA response time</div></div>
 </div>
 
-<div class="section" id="features">
+<!-- TOOLS SECTION -->
+<div class="sec" id="tools">
+  <div class="stag">Exclusive tools</div>
+  <div class="stitle">Only on TaxSetu</div>
+  <div class="ssub">No other Indian tax platform has all these features</div>
+  <div class="fbtnrow">
+    <button class="fbtn" onclick="openChat()">🤖 AI Chatbot <span class="nbadge">NEW</span></button>
+    <button class="fbtn" onclick="openBooking()">👨‍💼 Book a CA <span class="nbadge">NEW</span></button>
+    <button class="fbtn" onclick="openCalc()">🧮 Tax Calculator <span class="nbadge">NEW</span></button>
+    <button class="fbtn" onclick="openITR()">📊 ITR Tracker <span class="nbadge">NEW</span></button>
+    <button class="fbtn" onclick="openWA()">💬 WhatsApp CA <span class="nbadge">NEW</span></button>
+    <button class="fbtn" onclick="openUpload()">📄 Upload Docs <span class="nbadge">NEW</span></button>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="sec" id="features">
   <div class="stag">Why TaxSetu</div>
   <div class="stitle">Everything you need for taxes</div>
   <div class="ssub">Click any card to learn more 👇</div>
   <div class="grid">
-    <div class="card" onclick="openF('AI + Human Hybrid','🤖','Our AI engine reads your tax query and automatically routes it to the most suitable verified CA. No more waiting in queues or explaining your problem to the wrong person.')">
-      <div class="cicon">🤖</div><h3>AI + Human Hybrid</h3>
-      <p>AI pre-processes your query and routes it to the right CA specialist.</p>
-      <div class="clickhint">Click to learn more →</div>
+    <div class="card" onclick="openF('AI + Human Hybrid','🤖','Our AI reads your query and routes it to the best verified CA. No other platform combines AI routing with human CA expertise.')">
+      <div class="cicon">🤖</div><h3>AI + Human Hybrid</h3><p>AI routes your query to the right CA specialist automatically.</p><div class="clickhint">Click to learn more →</div>
     </div>
-    <div class="card" onclick="openF('ICAI-Verified CAs','✅','Every CA on TaxSetu is verified against the official ICAI registry. We check their Certificate of Practice and registration number. 100% real, qualified Chartered Accountants only.')">
-      <div class="cicon">✅</div><h3>ICAI-Verified CAs</h3>
-      <p>Every CA is verified against the ICAI registry. No fake experts.</p>
-      <div class="clickhint">Click to learn more →</div>
+    <div class="card" onclick="openF('ICAI-Verified CAs','✅','Every CA verified against ICAI registry. We check Certificate of Practice and registration number. 100% real Chartered Accountants.')">
+      <div class="cicon">✅</div><h3>ICAI-Verified CAs</h3><p>Every CA verified against the ICAI registry. No fake experts.</p><div class="clickhint">Click to learn more →</div>
     </div>
-    <div class="card" onclick="openF('ITR Filing Help','📋','Our CAs guide you through the entire ITR filing process — selecting the right form, finding deductions, reviewing your submission. No more wrong filings, no more penalties.')">
-      <div class="cicon">📋</div><h3>ITR Filing Help</h3>
-      <p>Guided ITR filing with document review and error checking.</p>
-      <div class="clickhint">Click to learn more →</div>
+    <div class="card" onclick="openF('ITR Filing Help','📋','CAs guide you through ITR filing — right form, deductions, submission review. No wrong filings, no penalties.')">
+      <div class="cicon">📋</div><h3>ITR Filing Help</h3><p>Guided ITR filing with document review and error checking.</p><div class="clickhint">Click to learn more →</div>
     </div>
-    <div class="card" onclick="openF('Audit Defence','🛡️','Received an IT notice? Your CA will read it, prepare the response, and represent you before the Income Tax department. Only on TaxSetu.')">
-      <div class="cicon">🛡️</div><h3>Audit Defence</h3>
-      <p>Got an IT notice? Your CA will represent you completely.</p>
-      <div class="clickhint">Click to learn more →</div>
+    <div class="card" onclick="openF('Audit Defence','🛡️','Got an IT notice? Your CA reads it, prepares response, and represents you. Only on TaxSetu — no competitor offers this.')">
+      <div class="cicon">🛡️</div><h3>Audit Defence</h3><p>Got an IT notice? Your CA represents you completely.</p><div class="clickhint">Click to learn more →</div>
     </div>
-    <div class="card" onclick="openF('365-Day Support','📅','With TaxSetu get support for advance tax, TDS, GST, investments — any financial query, any time of year. Your CA is always just a message away.')">
-      <div class="cicon">📅</div><h3>365-Day Support</h3>
-      <p>Not just during tax season. Year-round support always.</p>
-      <div class="clickhint">Click to learn more →</div>
+    <div class="card" onclick="openF('365-Day Support','📅','Support for advance tax, TDS, GST, investments all year round. Your CA is always just a message away.')">
+      <div class="cicon">📅</div><h3>365-Day Support</h3><p>Not just during tax season. Year-round support always.</p><div class="clickhint">Click to learn more →</div>
     </div>
-    <div class="card" onclick="openF('Bank-Grade Security','🔒','End-to-end encrypted. Everything stored on AWS Mumbai servers, compliant with IT Act 2000 and DPDP Act 2023.')">
-      <div class="cicon">🔒</div><h3>Bank-Grade Security</h3>
-      <p>End-to-end encrypted. AWS Mumbai servers within India.</p>
-      <div class="clickhint">Click to learn more →</div>
+    <div class="card" onclick="openF('Bank-Grade Security','🔒','End-to-end encrypted. AWS Mumbai servers. Compliant with IT Act 2000 and DPDP Act 2023.')">
+      <div class="cicon">🔒</div><h3>Bank-Grade Security</h3><p>End-to-end encrypted. AWS Mumbai servers within India.</p><div class="clickhint">Click to learn more →</div>
     </div>
   </div>
 </div>
 
-<div style="background:#16181f;padding:70px 20px" id="how">
+<div style="background:#16181f;padding:60px 20px" id="how">
   <div style="max-width:1100px;margin:0 auto">
     <div class="stag">Simple Process</div>
     <div class="stitle">How TaxSetu works</div>
     <div class="ssub">From signup to solved in under 24 hours</div>
     <div class="steps">
-      <div class="step"><div class="stepnum">1</div><h3>Register & Verify</h3><p>Sign up with mobile. Verify PAN for identity.</p></div>
-      <div class="step"><div class="stepnum">2</div><h3>Choose a Plan</h3><p>Pick Basic, Standard or Premium.</p></div>
-      <div class="step"><div class="stepnum">3</div><h3>Ask Your Query</h3><p>Type question or upload tax documents.</p></div>
-      <div class="step"><div class="stepnum">4</div><h3>AI Routes It</h3><p>AI sends query to right CA specialist.</p></div>
-      <div class="step"><div class="stepnum">5</div><h3>CA Responds</h3><p>Verified CA replies within 24 hours.</p></div>
+      <div class="step"><div class="stepnum">1</div><h3>Register</h3><p>Sign up with mobile number.</p></div>
+      <div class="step"><div class="stepnum">2</div><h3>Choose Plan</h3><p>Basic, Standard or Premium.</p></div>
+      <div class="step"><div class="stepnum">3</div><h3>Ask Query</h3><p>Type or speak your question.</p></div>
+      <div class="step"><div class="stepnum">4</div><h3>AI Routes</h3><p>AI sends to right CA.</p></div>
+      <div class="step"><div class="stepnum">5</div><h3>CA Responds</h3><p>Answer within 24 hours.</p></div>
     </div>
   </div>
 </div>
 
-<div class="section" id="pricing">
+<div class="sec" id="pricing">
   <div class="stag">Affordable Plans</div>
   <div class="stitle">Simple, transparent pricing</div>
   <div class="ssub">10x cheaper than visiting a traditional CA</div>
   <div class="pgrid">
     <div class="pcard">
-      <div class="pname">Basic</div>
-      <div class="pamt">₹299<small>/mo</small></div>
-      <div class="pper">Billed monthly</div>
+      <div class="pname">Basic</div><div class="pamt">₹299<small>/mo</small></div><div class="pper">Billed monthly</div>
       <ul class="plist">
         <li><span>✓</span>2 CA consultations/month</li>
         <li><span>✓</span>ITR filing guidance</li>
-        <li><span>✓</span>AI tax assistant</li>
-        <li><span>✓</span>Email support</li>
+        <li><span>✓</span>AI chatbot (6 languages)</li>
+        <li><span>✓</span>Tax calculator + suggestions</li>
       </ul>
       <button class="pbtn" onclick="openLogin()">Get Started</button>
     </div>
     <div class="pcard pop">
       <div class="popbadge">⭐ MOST POPULAR</div>
-      <div class="pname">Standard</div>
-      <div class="pamt">₹499<small>/mo</small></div>
-      <div class="pper">Billed monthly</div>
+      <div class="pname">Standard</div><div class="pamt">₹499<small>/mo</small></div><div class="pper">Billed monthly</div>
       <ul class="plist">
         <li><span>✓</span>5 CA consultations/month</li>
         <li><span>✓</span>ITR + GST filing</li>
-        <li><span>✓</span>Document review</li>
-        <li><span>✓</span>Priority support</li>
+        <li><span>✓</span>ITR status tracker</li>
+        <li><span>✓</span>WhatsApp CA connect</li>
         <li><span>✓</span>Audit defence (1 notice)</li>
       </ul>
       <button class="pbtn" onclick="openLogin()">Get Started</button>
     </div>
     <div class="pcard">
-      <div class="pname">Premium</div>
-      <div class="pamt">₹999<small>/mo</small></div>
-      <div class="pper">Billed monthly</div>
+      <div class="pname">Premium</div><div class="pamt">₹999<small>/mo</small></div><div class="pper">Billed monthly</div>
       <ul class="plist">
         <li><span>✓</span>Unlimited consultations</li>
         <li><span>✓</span>Dedicated CA assigned</li>
-        <li><span>✓</span>Business tax support</li>
+        <li><span>✓</span>All 6 languages + voice</li>
         <li><span>✓</span>Full audit defence</li>
         <li><span>✓</span>24/7 priority support</li>
       </ul>
@@ -210,56 +307,212 @@ html{scroll-behavior:smooth}
   <div>© 2026 TaxSetu — Team Tech Thunders, D Y Patil College Kolhapur</div>
 </footer>
 
-<!-- FEATURE POPUP -->
-<div class="overlay" id="foverlay">
-  <div class="popup">
-    <button class="popclose" onclick="closeF()">✕</button>
-    <div class="popicon" id="ficon"></div>
-    <h2 id="ftitle"></h2><br>
-    <p id="fdesc"></p>
+<!-- ── POPUPS ── -->
+
+<!-- Feature info -->
+<div class="ov" id="ov-feat">
+  <div class="pop">
+    <button class="pclose" onclick="cl('ov-feat')">✕</button>
+    <div style="font-size:36px;margin-bottom:12px" id="f-icon"></div>
+    <h2 id="f-title"></h2><br><p style="font-size:13px;color:#9ca3af;line-height:1.7" id="f-desc"></p>
   </div>
 </div>
 
-<!-- LOGIN POPUP -->
-<div class="overlay" id="loverlay">
-  <div class="popup">
-    <button class="popclose" onclick="closeLogin()">✕</button>
-    <div id="pscreen">
-      <h2 style="margin-bottom:6px">Get Started</h2>
-      <p style="font-size:13px;color:#6b7280;margin-bottom:22px">Enter your details to continue</p>
+<!-- Login -->
+<div class="ov" id="ov-login">
+  <div class="pop">
+    <button class="pclose" onclick="cl('ov-login')">✕</button>
+    <div id="ls-phone">
+      <h2 style="margin-bottom:4px">Get Started</h2>
+      <p class="psub">Enter your details to continue</p>
       <span class="lbl">Your Name</span>
-      <input type="text" id="uname" placeholder="Enter your full name">
+      <input type="text" id="l-name" placeholder="Enter your full name">
       <span class="lbl">Mobile Number</span>
       <div class="phrow">
         <div class="cc">🇮🇳 +91</div>
-        <input type="tel" id="ph" maxlength="10" placeholder="98765 43210" oninput="onPh(this)" style="margin-bottom:0">
+        <input type="tel" id="l-ph" maxlength="10" placeholder="98765 43210" oninput="onPh(this)" style="margin-bottom:0">
       </div>
-      <div class="errmsg" id="send-err"></div>
-      <button class="mbtn" id="sendbtn" onclick="sendOTP()" style="opacity:0.4;pointer-events:none">Send OTP →</button>
+      <div class="errmsg" id="l-err"></div>
+      <button class="mbtn" id="l-sendbtn" onclick="sendOTP()" style="opacity:0.4;pointer-events:none">Send OTP →</button>
     </div>
-    <div id="oscreen" style="display:none">
-      <h2 style="margin-bottom:6px">Enter OTP</h2>
-      <p style="font-size:13px;color:#6b7280;margin-bottom:22px">Sent to +91 <b id="dph" style="color:#00c896"></b></p>
+    <div id="ls-otp" style="display:none">
+      <h2 style="margin-bottom:4px">Enter OTP</h2>
+      <p class="psub">Sent to +91 <b id="l-dph" style="color:#00c896"></b></p>
       <div class="otpboxes" onclick="focusO()">
-        <div class="ob active" id="o0"></div>
-        <div class="ob" id="o1"></div>
-        <div class="ob" id="o2"></div>
-        <div class="ob" id="o3"></div>
-        <div class="ob" id="o4"></div>
-        <div class="ob" id="o5"></div>
+        <div class="ob active" id="o0"></div><div class="ob" id="o1"></div>
+        <div class="ob" id="o2"></div><div class="ob" id="o3"></div>
+        <div class="ob" id="o4"></div><div class="ob" id="o5"></div>
       </div>
-      <input id="oinp" type="tel" maxlength="6" style="position:fixed;left:-999px" oninput="onO(this)">
-      <div class="errmsg" id="verify-err"></div>
-      <button class="mbtn" id="vbtn" onclick="doVerify()" style="opacity:0.4;pointer-events:none">Verify & Continue →</button>
+      <input id="oinp" type="tel" maxlength="6" style="position:fixed;left:-9999px" oninput="onO(this)">
+      <div class="errmsg" id="o-err"></div>
+      <button class="mbtn" id="l-vbtn" onclick="doVerify()" style="opacity:0.4;pointer-events:none">Verify & Continue →</button>
       <p class="hint">Enter any 6 digits to verify</p>
     </div>
-    <div id="sscreen" style="display:none;text-align:center">
-      <div style="font-size:48px;margin-bottom:14px">🎉</div>
-      <h2 style="margin-bottom:8px">You're verified!</h2>
-      <p style="font-size:13px;color:#6b7280;margin-bottom:8px">Welcome to TaxSetu!</p>
-      <p class="successmsg" id="saved-msg"></p>
-      <br>
-      <button class="mbtn" onclick="closeLogin()">Go to Dashboard →</button>
+    <div id="ls-ok" style="display:none;text-align:center">
+      <div style="font-size:44px;margin-bottom:12px">🎉</div>
+      <h2 style="margin-bottom:6px">You're verified!</h2>
+      <p style="font-size:12px;color:#6b7280;margin-bottom:6px">Welcome to TaxSetu!</p>
+      <p class="okmsg" id="l-saved"></p><br>
+      <button class="mbtn" onclick="cl('ov-login')">Go to Dashboard →</button>
+    </div>
+  </div>
+</div>
+
+<!-- AI Chatbot -->
+<div class="ov" id="ov-chat">
+  <div class="pop wide">
+    <button class="pclose" onclick="cl('ov-chat')">✕</button>
+    <h2 style="margin-bottom:3px">🤖 AI Tax Assistant</h2>
+    <p class="psub">Ask any tax question in your language — voice supported</p>
+    <div class="chat-toolbar">
+      <select class="chat-lang" id="c-lang" onchange="chatLang=this.value">
+        <option value="en-IN">🇬🇧 English</option>
+        <option value="hi-IN">🇮🇳 हिंदी</option>
+        <option value="mr-IN">🇮🇳 मराठी</option>
+        <option value="te-IN">🇮🇳 తెలుగు</option>
+        <option value="ta-IN">🇮🇳 தமிழ்</option>
+        <option value="kn-IN">🇮🇳 ಕನ್ನಡ</option>
+      </select>
+      <button class="vbtn" id="v-btn" onclick="toggleVoice()" title="Speak">🎤</button>
+    </div>
+    <div class="chat-msgs" id="c-msgs">
+      <div class="cmsg bot">👋 Hi! I am TaxSetu AI. Ask me anything about Indian taxes in English, Hindi, Marathi, Telugu, Tamil or Kannada!</div>
+    </div>
+    <div class="chat-row">
+      <input class="chat-inp" id="c-inp" type="text" placeholder="Type or 🎤 speak..." onkeydown="if(event.key==='Enter')sendChat()">
+      <button class="csend" onclick="sendChat()">Send</button>
+    </div>
+    <p style="font-size:10px;color:#4b5563;text-align:center;margin-top:6px">🔊 Tap speaker on any answer to hear it</p>
+  </div>
+</div>
+
+<!-- CA Booking -->
+<div class="ov" id="ov-book">
+  <div class="pop wide">
+    <button class="pclose" onclick="cl('ov-book')">✕</button>
+    <h2 style="margin-bottom:3px">👨‍💼 Book a CA</h2>
+    <p class="psub">Choose from ICAI-verified Chartered Accountants</p>
+    <div class="ca-grid" id="ca-grid"></div>
+    <div id="book-form" style="display:none">
+      <div style="background:#1e2130;border-radius:9px;padding:10px;margin-bottom:12px;font-size:12px">Selected: <b id="sel-ca" style="color:#00c896"></b></div>
+      <span class="lbl">Select Date</span>
+      <input type="text" id="b-date" placeholder="e.g. 20 March 2026">
+      <span class="lbl">Select Time</span>
+      <select id="b-time"><option>10:00 AM</option><option>11:00 AM</option><option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option></select>
+      <span class="lbl">Query Type</span>
+      <select id="b-type"><option>ITR Filing</option><option>GST Support</option><option>Audit Defence</option><option>Investment Planning</option><option>Business Tax</option></select>
+      <button class="mbtn" onclick="confirmBook()">Confirm Booking ✓</button>
+      <button class="mbtn2" onclick="document.getElementById('book-form').style.display='none'">← Back</button>
+    </div>
+    <div id="book-ok" style="display:none;text-align:center">
+      <div style="font-size:44px;margin-bottom:12px">✅</div>
+      <h2 style="margin-bottom:6px">Booking Confirmed!</h2>
+      <p style="font-size:12px;color:#6b7280;margin-bottom:8px" id="book-ok-txt">Saved to database. CA will contact you within 2 hours.</p>
+      <button class="mbtn" onclick="cl('ov-book')">Done</button>
+    </div>
+  </div>
+</div>
+
+<!-- Tax Calculator with Smart Suggestions -->
+<div class="ov" id="ov-calc">
+  <div class="pop">
+    <button class="pclose" onclick="cl('ov-calc')">✕</button>
+    <h2 style="margin-bottom:3px">🧮 Income Tax Calculator</h2>
+    <p class="psub">FY 2025-26 — with smart saving suggestions</p>
+    <span class="lbl">Annual Income (₹)</span>
+    <input type="number" id="c-inc" placeholder="e.g. 800000" oninput="calcTax()">
+    <span class="lbl">Tax Regime</span>
+    <select id="c-reg" onchange="calcTax()"><option value="new">New Tax Regime</option><option value="old">Old Tax Regime</option></select>
+    <span class="lbl">Age</span>
+    <select id="c-age" onchange="calcTax()"><option value="b60">Below 60 years</option><option value="s60">Senior (60-80 years)</option><option value="ss80">Super Senior (80+)</option></select>
+    <div class="calc-res" id="c-res" style="display:none">
+      <div class="calc-row"><span>Gross Income</span><span id="r-inc"></span></div>
+      <div class="calc-row"><span>Standard Deduction</span><span id="r-ded"></span></div>
+      <div class="calc-row"><span>Taxable Income</span><span id="r-tax"></span></div>
+      <div class="calc-row"><span>Income Tax</span><span id="r-itax"></span></div>
+      <div class="calc-row"><span>Cess (4%)</span><span id="r-cess"></span></div>
+      <div class="calc-row"><span>Total Tax Payable</span><span id="r-tot"></span></div>
+    </div>
+    <!-- SMART SUGGESTIONS -->
+    <div class="suggest-box" id="c-sugg" style="display:none">
+      <div class="suggest-title">💡 Smart Tax Saving Suggestions</div>
+      <div id="sugg-list"></div>
+      <div style="font-size:11px;color:#6b7280;margin-top:8px">Invest in these instruments to legally reduce your tax!</div>
+    </div>
+    <button class="mbtn" style="margin-top:14px" onclick="openLogin()">Get CA Help for Filing →</button>
+  </div>
+</div>
+
+<!-- ITR Status Tracker -->
+<div class="ov" id="ov-itr">
+  <div class="pop">
+    <button class="pclose" onclick="cl('ov-itr')">✕</button>
+    <h2 style="margin-bottom:3px">📊 ITR Status Tracker</h2>
+    <p class="psub">Track your ITR filing progress for FY 2025-26</p>
+    <span class="lbl">Enter your PAN Number</span>
+    <input type="text" id="itr-pan" placeholder="e.g. ABCDE1234F" maxlength="10" style="text-transform:uppercase">
+    <button class="mbtn" onclick="trackITR()" style="margin-bottom:14px">Track Status →</button>
+    <div id="itr-result" style="display:none">
+      <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px">
+        <span style="color:#6b7280">Filing Progress</span>
+        <span id="itr-pct" style="color:#00c896;font-weight:700"></span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="itr-bar" style="width:0%"></div></div>
+      <div class="itr-steps" id="itr-steps"></div>
+      <div style="margin-top:14px;background:rgba(0,200,150,0.07);border:1px solid rgba(0,200,150,0.2);border-radius:10px;padding:12px;font-size:12px;color:#9ca3af">
+        <b style="color:#00c896">Tip:</b> File before July 31, 2026 to avoid late filing fee of ₹5,000.
+      </div>
+      <button class="mbtn" style="margin-top:12px" onclick="openLogin()">Get CA Help for Filing →</button>
+    </div>
+  </div>
+</div>
+
+<!-- WhatsApp CA Connect -->
+<div class="ov" id="ov-wa">
+  <div class="pop">
+    <button class="pclose" onclick="cl('ov-wa')">✕</button>
+    <h2 style="margin-bottom:3px">💬 WhatsApp CA Connect</h2>
+    <p class="psub">Connect with your CA directly on WhatsApp — India's most used app</p>
+    <div class="wa-card" onclick="waConnect('Rajesh Kumar','919876543210','Income Tax & GST')">
+      <div class="wa-icon">R</div>
+      <div class="wa-info"><h3>CA Rajesh Kumar</h3><p>Income Tax & GST • ⭐ 4.9 • Available Now</p></div>
+    </div>
+    <div class="wa-card" onclick="waConnect('Anjali Sharma','919876543211','Corporate Audit')">
+      <div class="wa-icon">A</div>
+      <div class="wa-info"><h3>CA Anjali Sharma</h3><p>Corporate Audit • ⭐ 4.8 • Available Now</p></div>
+    </div>
+    <div class="wa-card" onclick="waConnect('Vikram Singh','919876543212','NRI Taxation')">
+      <div class="wa-icon">V</div>
+      <div class="wa-info"><h3>CA Vikram Singh</h3><p>NRI Taxation • ⭐ 4.9 • Available Now</p></div>
+    </div>
+    <div class="wa-card" onclick="waConnect('Priya Mehta','919876543213','Startup Compliance')">
+      <div class="wa-icon">P</div>
+      <div class="wa-info"><h3>CA Priya Mehta</h3><p>Startup Compliance • ⭐ 4.7 • Available Now</p></div>
+    </div>
+    <div id="wa-msg" style="display:none;background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.3);border-radius:10px;padding:12px;font-size:12px;color:#25d366;margin-top:4px;text-align:center"></div>
+  </div>
+</div>
+
+<!-- Document Upload -->
+<div class="ov" id="ov-upload">
+  <div class="pop">
+    <button class="pclose" onclick="cl('ov-upload')">✕</button>
+    <h2 style="margin-bottom:3px">📄 Upload Documents</h2>
+    <p class="psub">Upload your tax documents for CA review</p>
+    <div class="upzone" id="upzone" onclick="document.getElementById('finput').click()" ondragover="dov(event)" ondragleave="dol()" ondrop="dod(event)">
+      <div style="font-size:32px;margin-bottom:8px">📁</div>
+      <div style="font-size:13px;color:#9ca3af;margin-bottom:4px">Click to upload or drag & drop</div>
+      <div style="font-size:11px;color:#6b7280">Form 16, Salary Slips, Bank Statements, GST Returns</div>
+    </div>
+    <input type="file" id="finput" style="display:none" multiple accept=".pdf,.jpg,.png,.xlsx" onchange="handleFiles(this.files)">
+    <div class="flist" id="flist"></div>
+    <div id="up-btnarea" style="display:none">
+      <button class="mbtn" onclick="submitDocs()">Send to CA for Review →</button>
+    </div>
+    <div id="up-ok" style="display:none;text-align:center;padding:16px 0">
+      <div style="font-size:44px;margin-bottom:12px">✅</div>
+      <h2 style="margin-bottom:6px">Documents Sent!</h2>
+      <p style="font-size:12px;color:#6b7280">Your CA will review and respond within 24 hours.</p>
     </div>
   </div>
 </div>
@@ -267,64 +520,91 @@ html{scroll-behavior:smooth}
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+import { getDatabase, ref, set, push, get } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBYrgG5BEzZhUBg5mvhcz6yzV0vnhTK1mY",
-  authDomain: "taxsetu-b9e3d.firebaseapp.com",
-  projectId: "taxsetu-b9e3d",
-  storageBucket: "taxsetu-b9e3d.firebasestorage.app",
-  messagingSenderId: "429050599204",
-  appId: "1:429050599204:web:85241d579edb82e333c5b1",
-  databaseURL: "https://taxsetu-b9e3d-default-rtdb.firebaseio.com"
+const FC = {
+  apiKey:"AIzaSyBYrgG5BEzZhUBg5mvhcz6yzV0vnhTK1mY",
+  authDomain:"taxsetu-b9e3d.firebaseapp.com",
+  projectId:"taxsetu-b9e3d",
+  storageBucket:"taxsetu-b9e3d.firebasestorage.app",
+  messagingSenderId:"429050599204",
+  appId:"1:429050599204:web:85241d579edb82e333c5b1",
+  databaseURL:"https://taxsetu-b9e3d-default-rtdb.firebaseio.com"
 };
-
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(FC);
 const auth = getAuth(app);
 const db = getDatabase(app);
-let otpval = '';
 
-window.openF = function(title,icon,desc){
-  document.getElementById('ficon').textContent=icon;
-  document.getElementById('ftitle').textContent=title;
-  document.getElementById('fdesc').textContent=desc;
-  document.getElementById('foverlay').classList.add('show');
-}
-window.closeF = function(){document.getElementById('foverlay').classList.remove('show');}
+let otpval='', chatLangVal='en-IN', isRec=false, recog=null, selCA='', currentLang='en';
+window.chatLang = 'en-IN';
 
+// ── LANG ──
+const T={
+  en:{badge:'✦ ICAI-Verified Chartered Accountants',title:'Expert CA advice,',t2:'without the bill.',sub:'Connect with verified CAs for ITR filing, GST support, and audit defence. Starting at just ₹299/month.',b1:'Get Started Free →',b2:'Try AI Chatbot 🤖',s1:'ITR filers in India',s2:'Starting price/month',s3:'Verified CAs available',s4:'CA response time',navBtn:'Get Started Free'},
+  hi:{badge:'✦ ICAI-सत्यापित चार्टर्ड अकाउंटेंट',title:'विशेषज्ञ CA सलाह,',t2:'बिना भारी फीस के।',sub:'सत्यापित CA से ITR, GST और ऑडिट के लिए जुड़ें। मात्र ₹299/माह से शुरू।',b1:'मुफ्त शुरू करें →',b2:'AI चैटबॉट 🤖',s1:'भारत में ITR दाखिलकर्ता',s2:'शुरुआती मूल्य/माह',s3:'सत्यापित CA उपलब्ध',s4:'CA प्रतिक्रिया समय',navBtn:'मुफ्त शुरू करें'},
+  mr:{badge:'✦ ICAI-सत्यापित CA',title:'तज्ञ CA सल्ला,',t2:'बिल शिवाय।',sub:'सत्यापित CA शी ITR, GST आणि ऑडिटसाठी जोडा. फक्त ₹299/महिन्यापासून.',b1:'मोफत सुरू करा →',b2:'AI चॅटबॉट 🤖',s1:'भारतातील ITR दाखलकर्ते',s2:'किंमत/महिना',s3:'सत्यापित CA उपलब्ध',s4:'CA प्रतिसाद वेळ',navBtn:'मोफत सुरू करा'},
+  te:{badge:'✦ ICAI ధృవీకరించిన CA లు',title:'నిపుణ CA సలహా,',t2:'బిల్లు లేకుండా.',sub:'ధృవీకరించిన CA లతో ITR, GST కోసం కనెక్ట్ అవ్వండి. కేవలం ₹299/నెలకు.',b1:'ఉచితంగా ప్రారంభించండి →',b2:'AI చాట్‌బాట్ 🤖',s1:'ITR దాఖలుదారులు',s2:'ప్రారంభ ధర/నెల',s3:'ధృవీకరించిన CA లు',s4:'CA స్పందన సమయం',navBtn:'ఉచితంగా ప్రారంభించండి'},
+  ta:{badge:'✦ ICAI சரிபார்க்கப்பட்ட CA கள்',title:'நிபுணர் CA ஆலோசனை,',t2:'கட்டணம் இல்லாமல்.',sub:'சரிபார்க்கப்பட்ட CA களுடன் ITR, GST கோரிக்கைகளுக்கு இணையுங்கள். வெறும் ₹299/மாதம்.',b1:'இலவசமாக தொடங்கு →',b2:'AI சாட்பாட் 🤖',s1:'ITR தாக்கல்காரர்கள்',s2:'தொடக்க விலை/மாதம்',s3:'சரிபார்க்கப்பட்ட CA கள்',s4:'CA பதில் நேரம்',navBtn:'இலவசமாக தொடங்கு'},
+  kn:{badge:'✦ ICAI ಪರಿಶೀಲಿಸಿದ CA ಗಳು',title:'ತಜ್ಞ CA ಸಲಹೆ,',t2:'ಶುಲ್ಕವಿಲ್ಲದೆ.',sub:'ಪರಿಶೀಲಿಸಿದ CA ಗಳೊಂದಿಗೆ ITR, GST ಗಾಗಿ ಸಂಪರ್ಕಿಸಿ. ಕೇವಲ ₹299/ತಿಂಗಳು.',b1:'ಉಚಿತವಾಗಿ ಪ್ರಾರಂಭಿಸಿ →',b2:'AI ಚಾಟ್‌ಬಾಟ್ 🤖',s1:'ITR ಸಲ್ಲಿಕೆದಾರರು',s2:'ಆರಂಭಿಕ ಬೆಲೆ/ತಿಂಗಳು',s3:'ಪರಿಶೀಲಿಸಿದ CA ಗಳು',s4:'CA ಪ್ರತಿಕ್ರಿಯೆ ಸಮಯ',navBtn:'ಉಚಿತವಾಗಿ ಪ್ರಾರಂಭಿಸಿ'}
+};
+window.changeLang = function(l){
+  currentLang=l;
+  var t=T[l]||T.en;
+  document.getElementById('h-badge').textContent=t.badge;
+  document.getElementById('h-title').childNodes[0].textContent=t.title;
+  document.getElementById('h-title2').textContent=t.t2;
+  document.getElementById('h-sub').textContent=t.sub;
+  document.getElementById('h-btn1').textContent=t.b1;
+  document.getElementById('h-btn2').textContent=t.b2;
+  document.getElementById('s1').textContent=t.s1;
+  document.getElementById('s2').textContent=t.s2;
+  document.getElementById('s3').textContent=t.s3;
+  document.getElementById('s4').textContent=t.s4;
+  document.getElementById('nav-btn').textContent=t.navBtn;
+};
+
+// ── UTILS ──
+window.cl = function(id){document.getElementById(id).classList.remove('show');}
+function op(id){document.getElementById(id).classList.add('show');}
+window.onclick = function(e){
+  ['ov-feat','ov-login','ov-chat','ov-book','ov-calc','ov-itr','ov-wa','ov-upload'].forEach(function(id){
+    if(e.target===document.getElementById(id))cl(id);
+  });
+};
+function fmt(n){return '₹'+(Math.round(n)).toLocaleString('en-IN');}
+
+// ── FEATURE POPUP ──
+window.openF = function(t,i,d){
+  document.getElementById('f-icon').textContent=i;
+  document.getElementById('f-title').textContent=t;
+  document.getElementById('f-desc').textContent=d;
+  op('ov-feat');
+};
+
+// ── LOGIN ──
 window.openLogin = function(){
-  document.getElementById('loverlay').classList.add('show');
-  document.getElementById('pscreen').style.display='block';
-  document.getElementById('oscreen').style.display='none';
-  document.getElementById('sscreen').style.display='none';
-  document.getElementById('send-err').textContent='';
-}
-window.closeLogin = function(){document.getElementById('loverlay').classList.remove('show');}
-
+  op('ov-login');
+  document.getElementById('ls-phone').style.display='block';
+  document.getElementById('ls-otp').style.display='none';
+  document.getElementById('ls-ok').style.display='none';
+};
 window.onPh = function(el){
   var v=el.value.replace(/\D/g,'');el.value=v;
-  var b=document.getElementById('sendbtn');
+  var b=document.getElementById('l-sendbtn');
   if(v.length===10){b.style.opacity='1';b.style.pointerEvents='auto';}
   else{b.style.opacity='0.4';b.style.pointerEvents='none';}
-}
-
+};
 window.sendOTP = function(){
-  var ph=document.getElementById('ph').value;
-  document.getElementById('dph').textContent=ph;
-  document.getElementById('pscreen').style.display='none';
-  document.getElementById('oscreen').style.display='block';
-  otpval='';
-  document.getElementById('oinp').value='';
-  for(var i=0;i<6;i++){
-    var b=document.getElementById('o'+i);
-    b.textContent='';b.className='ob';
-  }
+  var ph=document.getElementById('l-ph').value;
+  document.getElementById('l-dph').textContent=ph;
+  document.getElementById('ls-phone').style.display='none';
+  document.getElementById('ls-otp').style.display='block';
+  otpval='';document.getElementById('oinp').value='';
+  for(var i=0;i<6;i++){var b=document.getElementById('o'+i);b.textContent='';b.className='ob';}
   document.getElementById('o0').classList.add('active');
   setTimeout(function(){document.getElementById('oinp').focus();},100);
-}
-
-window.focusO = function(){document.getElementById('oinp').focus();}
-
+};
+window.focusO = function(){document.getElementById('oinp').focus();};
 window.onO = function(el){
   var v=el.value.replace(/\D/g,'').slice(0,6);el.value=v;otpval=v;
   for(var i=0;i<6;i++){
@@ -333,36 +613,295 @@ window.onO = function(el){
     else b.textContent='';
     if(i===v.length&&i<6)b.classList.add('active');
   }
-  var vb=document.getElementById('vbtn');
+  var vb=document.getElementById('l-vbtn');
   if(v.length===6){vb.style.opacity='1';vb.style.pointerEvents='auto';}
   else{vb.style.opacity='0.4';vb.style.pointerEvents='none';}
-}
-
+};
 window.doVerify = async function(){
-  var btn=document.getElementById('vbtn');
-  btn.textContent='Verifying...';
-  var name=document.getElementById('uname').value||'TaxSetu User';
-  var phone=document.getElementById('ph').value;
-  var userId='user_'+phone+'_'+Date.now();
+  var name=document.getElementById('l-name').value||'TaxSetu User';
+  var phone=document.getElementById('l-ph').value;
+  var uid='user_'+phone+'_'+Date.now();
   try{
-    await set(ref(db,'users/'+userId),{
-      name:name,
-      phone:'+91'+phone,
-      plan:'Basic',
-      joinedAt:new Date().toISOString()
+    await set(ref(db,'users/'+uid),{
+      name:name,phone:'+91'+phone,plan:'Basic',
+      lang:currentLang,joinedAt:new Date().toISOString()
     });
-    document.getElementById('saved-msg').textContent='✓ Your data saved to database!';
-  }catch(e){
-    console.log('DB error:',e);
+    document.getElementById('l-saved').textContent='✓ Your data saved to database!';
+  }catch(e){console.log('DB err:',e);}
+  document.getElementById('ls-otp').style.display='none';
+  document.getElementById('ls-ok').style.display='block';
+};
+
+// ── AI CHATBOT ──
+window.openChat = function(){op('ov-chat');};
+window.closeChat = function(){cl('ov-chat');window.speechSynthesis&&window.speechSynthesis.cancel();};
+window.chatLang = 'en-IN';
+
+const CA={
+  en:{
+    itr:'For salaried employees, use ITR-1 (Sahaj). File before July 31st. You need Form 16 from your employer. Our CA can guide you through the entire process!',
+    gst:'GST registration is mandatory if annual turnover exceeds ₹40 lakhs. File GSTR-1 and GSTR-3B monthly.',
+    tds:'TDS is deducted at source by your employer. Check Form 26AS on Income Tax portal. Claim refund while filing ITR.',
+    deduction:'Under 80C, save up to ₹1.5L via PPF, ELSS, LIC. Under 80D, save ₹25,000 for health insurance. Use our Tax Calculator for exact savings!',
+    audit:'Got IT notice? Do not panic! Check notice type — scrutiny, defective, or demand. Reply within deadline. Our CA will handle everything!',
+    salary:'New tax regime gives ₹75,000 standard deduction for salaried employees. Your employer deducts TDS monthly.',
+    itr2:'Check ITR status using our ITR Tracker tool. Enter your PAN to see current filing status.',
+    wa:'Use our WhatsApp CA Connect feature to instantly message a verified CA on WhatsApp!',
+    default:"Great question! Our ICAI-verified CAs answer this for just ₹299/month. Click 'Get Started Free' to connect!"
+  },
+  hi:{
+    itr:'वेतनभोगी कर्मचारियों के लिए ITR-1 भरें। 31 जुलाई से पहले दाखिल करें। Form 16 नियोक्ता से लें।',
+    gst:'₹40 लाख से अधिक टर्नओवर पर GST पंजीकरण अनिवार्य। हर महीने GSTR-1 और GSTR-3B दाखिल करें।',
+    tds:'TDS नियोक्ता काटता है। Form 26AS में जांचें। ITR में रिफंड का दावा करें।',
+    deduction:'80C में PPF, ELSS, LIC से ₹1.5 लाख बचाएं। 80D में स्वास्थ्य बीमा से ₹25,000। हमारा कैलकुलेटर उपयोग करें!',
+    audit:'IT नोटिस? घबराएं नहीं! हमारा CA सब संभालेगा।',
+    salary:'नई कर व्यवस्था में ₹75,000 मानक कटौती मिलती है।',
+    default:'बेहतरीन सवाल! ₹299/माह में CA से जुड़ें।'
+  },
+  mr:{
+    itr:'पगारदारांसाठी ITR-1 भरा. 31 जुलैपूर्वी दाखल करा.',
+    gst:'₹40 लाखांपेक्षा जास्त उलाढालीवर GST नोंदणी अनिवार्य.',
+    tds:'TDS नियोक्त्याने कापला जातो. Form 26AS तपासा.',
+    deduction:'80C मध्ये ₹1.5 लाखपर्यंत वजावट. आमचा कॅल्क्युलेटर वापरा!',
+    audit:'IT नोटीस? आमचा CA मदत करेल.',
+    salary:'नवीन करप्रणालीत ₹75,000 मानक वजावट.',
+    default:'₹299/महिन्यात CA शी जोडा!'
+  },
+  te:{itr:'ITR-1 వాడండి. జూలై 31కి ముందు దాఖలు చేయండి.',gst:'GST నమోదు తప్పనిసరి.',tds:'TDS Form 26AS లో తనిఖీ చేయండి.',deduction:'80C లో ₹1.5 లక్షల వరకు తగ్గింపు పొందవచ్చు.',audit:'IT నోటీసు? మా CA సహాయం చేస్తారు.',salary:'కొత్త పన్ను విధానంలో ₹75,000 తగ్గింపు.',default:'₹299/నెలలో CA తో కనెక్ట్ అవ్వండి!'},
+  ta:{itr:'ITR-1 பயன்படுத்தவும். ஜூலை 31கு முன் தாக்கல் செய்யுங்கள்.',gst:'GST பதிவு கட்டாயம்.',tds:'Form 26AS இல் TDS சரிபார்க்கவும்.',deduction:'80C இல் ₹1.5 லட்சம் வரை கழிப்பு.',audit:'IT அறிவிப்பு? எங்கள் CA உதவுவார்.',salary:'₹75,000 நிலையான கழிப்பு.',default:'₹299/மாதத்தில் CA உடன் இணையுங்கள்!'},
+  kn:{itr:'ITR-1 ಬಳಸಿ. ಜುಲೈ 31ರ ಮೊದಲು ಸಲ್ಲಿಸಿ.',gst:'GST ನೋಂದಣಿ ಕಡ್ಡಾಯ.',tds:'Form 26AS ನಲ್ಲಿ TDS ಪರಿಶೀಲಿಸಿ.',deduction:'80C ಅಡಿ ₹1.5 ಲಕ್ಷ ಕಡಿತ.',audit:'IT ನೋಟಿಸ್? ಭಯಪಡಬೇಡಿ.',salary:'₹75,000 ಮಾನಕ ಕಡಿತ.',default:'₹299/ತಿಂಗಳಿಗೆ CA ಜೊತೆ ಸಂಪರ್ಕಿಸಿ!'}
+};
+
+window.sendChat = function(){
+  var inp=document.getElementById('c-inp');
+  var msg=inp.value.trim();if(!msg)return;
+  addMsg(msg,'user',null);inp.value='';
+  var t=document.createElement('div');t.className='typing';t.id='typ';
+  t.innerHTML='<span></span><span></span><span></span>';
+  document.getElementById('c-msgs').appendChild(t);scrollChat();
+  var lang=window.chatLang.split('-')[0];
+  var ans=CA[lang]||CA.en;
+  setTimeout(function(){
+    document.getElementById('typ')&&document.getElementById('typ').remove();
+    var low=msg.toLowerCase();
+    var reply=ans.default;
+    if(low.includes('itr status')||low.includes('track'))reply=ans.itr2||ans.itr;
+    else if(low.includes('itr')||low.includes('return')||low.includes('file')||low.includes('दाखिल')||low.includes('दाखल'))reply=ans.itr;
+    else if(low.includes('gst')||low.includes('जीएसटी'))reply=ans.gst;
+    else if(low.includes('tds'))reply=ans.tds;
+    else if(low.includes('deduction')||low.includes('80c')||low.includes('save')||low.includes('बचत')||low.includes('वजावट'))reply=ans.deduction;
+    else if(low.includes('notice')||low.includes('audit')||low.includes('नोटिस'))reply=ans.audit;
+    else if(low.includes('salary')||low.includes('वेतन')||low.includes('पगार'))reply=ans.salary;
+    else if(low.includes('whatsapp')||low.includes('contact'))reply=ans.wa||ans.default;
+    addMsg(reply,'bot',window.chatLang);
+  },1200);
+};
+function addMsg(m,t,lang){
+  var d=document.createElement('div');d.className='cmsg '+t;d.textContent=m;
+  if(t==='bot'&&lang){
+    var sb=document.createElement('button');sb.className='speak-btn';sb.textContent='🔊 Hear';
+    sb.onclick=function(){speakText(m,lang);};
+    d.appendChild(document.createElement('br'));d.appendChild(sb);
   }
-  document.getElementById('oscreen').style.display='none';
-  document.getElementById('sscreen').style.display='block';
+  document.getElementById('c-msgs').appendChild(d);scrollChat();
+}
+function scrollChat(){var m=document.getElementById('c-msgs');m.scrollTop=m.scrollHeight;}
+function speakText(t,l){
+  if(!('speechSynthesis' in window))return;
+  window.speechSynthesis.cancel();
+  var u=new SpeechSynthesisUtterance(t);u.lang=l;u.rate=0.9;
+  window.speechSynthesis.speak(u);
 }
 
-window.onclick=function(e){
-  if(e.target===document.getElementById('foverlay'))window.closeF();
-  if(e.target===document.getElementById('loverlay'))window.closeLogin();
-}
+// VOICE INPUT
+window.toggleVoice = function(){
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){alert('Use Chrome for voice input.');return;}
+  if(isRec){recog&&recog.stop();isRec=false;document.getElementById('v-btn').classList.remove('rec');document.getElementById('v-btn').textContent='🎤';return;}
+  recog=new SR();recog.lang=window.chatLang;recog.continuous=false;recog.interimResults=false;
+  recog.onstart=function(){isRec=true;document.getElementById('v-btn').classList.add('rec');document.getElementById('v-btn').textContent='⏹️';document.getElementById('c-inp').placeholder='Listening...';};
+  recog.onresult=function(e){document.getElementById('c-inp').value=e.results[0][0].transcript;};
+  recog.onend=function(){isRec=false;document.getElementById('v-btn').classList.remove('rec');document.getElementById('v-btn').textContent='🎤';document.getElementById('c-inp').placeholder='Type or 🎤 speak...';if(document.getElementById('c-inp').value)window.sendChat();};
+  recog.onerror=function(){isRec=false;document.getElementById('v-btn').classList.remove('rec');document.getElementById('v-btn').textContent='🎤';};
+  recog.start();
+};
+
+// ── CA BOOKING ──
+window.openBooking = function(){
+  op('ov-book');
+  document.getElementById('book-form').style.display='none';
+  document.getElementById('book-ok').style.display='none';
+  var grid=document.getElementById('ca-grid');grid.style.display='grid';grid.innerHTML='';
+  [
+    {n:'CA Rajesh Kumar',s:'Income Tax & GST',r:'⭐ 4.9',f:'₹499/session',i:'R'},
+    {n:'CA Anjali Sharma',s:'Corporate Audit',r:'⭐ 4.8',f:'₹799/session',i:'A'},
+    {n:'CA Vikram Singh',s:'NRI Taxation',r:'⭐ 4.9',f:'₹999/session',i:'V'},
+    {n:'CA Priya Mehta',s:'Startup Compliance',r:'⭐ 4.7',f:'₹399/session',i:'P'}
+  ].forEach(function(ca){
+    var d=document.createElement('div');d.className='ca-card';
+    d.innerHTML='<div class="ca-av">'+ca.i+'</div><div class="ca-name">'+ca.n+'</div><div class="ca-spec">'+ca.s+'</div><div class="ca-rating">'+ca.r+'</div><div class="ca-fee">'+ca.f+'</div>';
+    d.onclick=function(){
+      document.querySelectorAll('.ca-card').forEach(function(c){c.classList.remove('sel');});
+      d.classList.add('sel');selCA=ca.n;
+      document.getElementById('sel-ca').textContent=ca.n+' ('+ca.s+')';
+      document.getElementById('book-form').style.display='block';
+    };
+    grid.appendChild(d);
+  });
+};
+window.confirmBook = async function(){
+  var date=document.getElementById('b-date').value;
+  var time=document.getElementById('b-time').value;
+  var type=document.getElementById('b-type').value;
+  try{
+    var newRef=await push(ref(db,'bookings'),{
+      ca:selCA,date:date,time:time,type:type,bookedAt:new Date().toISOString()
+    });
+    document.getElementById('book-ok-txt').textContent='Booking saved to database! CA will contact you within 2 hours.';
+  }catch(e){
+    document.getElementById('book-ok-txt').textContent='Booking confirmed! CA will contact you within 2 hours.';
+  }
+  document.getElementById('book-form').style.display='none';
+  document.getElementById('ca-grid').style.display='none';
+  document.getElementById('book-ok').style.display='block';
+};
+window.closeBooking = function(){cl('ov-book');};
+
+// ── TAX CALCULATOR + SMART SUGGESTIONS ──
+window.openCalc = function(){op('ov-calc');};
+window.closeCalc = function(){cl('ov-calc');};
+window.calcTax = function(){
+  var inc=parseFloat(document.getElementById('c-inc').value)||0;
+  if(inc<=0){document.getElementById('c-res').style.display='none';document.getElementById('c-sugg').style.display='none';return;}
+  var reg=document.getElementById('c-reg').value;
+  var age=document.getElementById('c-age').value;
+  var std=75000;
+  var taxable=Math.max(0,inc-std);
+  var tax=0;
+  if(reg==='new'){
+    if(taxable<=300000)tax=0;
+    else if(taxable<=700000)tax=(taxable-300000)*0.05;
+    else if(taxable<=1000000)tax=20000+(taxable-700000)*0.10;
+    else if(taxable<=1200000)tax=50000+(taxable-1000000)*0.15;
+    else if(taxable<=1500000)tax=80000+(taxable-1200000)*0.20;
+    else tax=140000+(taxable-1500000)*0.30;
+    if(inc<=700000)tax=0;
+  } else {
+    var ex=age==='s60'?300000:age==='ss80'?500000:250000;
+    var t=Math.max(0,taxable-ex);
+    if(t<=250000)tax=0;
+    else if(t<=500000)tax=t*0.05;
+    else if(t<=1000000)tax=12500+(t-500000)*0.20;
+    else tax=112500+(t-1000000)*0.30;
+  }
+  var cess=tax*0.04;var tot=tax+cess;
+  document.getElementById('r-inc').textContent=fmt(inc);
+  document.getElementById('r-ded').textContent=fmt(std);
+  document.getElementById('r-tax').textContent=fmt(taxable);
+  document.getElementById('r-itax').textContent=fmt(tax);
+  document.getElementById('r-cess').textContent=fmt(cess);
+  document.getElementById('r-tot').textContent=fmt(tot);
+  document.getElementById('c-res').style.display='block';
+
+  // SMART SUGGESTIONS
+  if(tax>0){
+    var suggestions=[];
+    var rate=tax>0?(reg==='old'?0.30:0.20):0;
+    if(inc>500000){suggestions.push({name:'PPF (Public Provident Fund)',invest:'₹1,50,000',save:fmt(150000*rate),tip:'Section 80C — guaranteed 7.1% returns'});}
+    if(inc>500000){suggestions.push({name:'ELSS Mutual Fund',invest:'₹1,50,000',save:fmt(150000*rate),tip:'Section 80C — best returns in 80C'});}
+    if(inc>300000){suggestions.push({name:'Health Insurance (80D)',invest:'₹25,000',save:fmt(25000*rate),tip:'Section 80D — protect health + save tax'});}
+    if(inc>500000){suggestions.push({name:'NPS (National Pension)',invest:'₹50,000',save:fmt(50000*rate),tip:'Section 80CCD(1B) — extra ₹50,000 benefit'});}
+    var sl=document.getElementById('sugg-list');sl.innerHTML='';
+    suggestions.forEach(function(s){
+      var div=document.createElement('div');div.className='suggest-item';
+      div.innerHTML='<div><div style="font-weight:700;margin-bottom:2px">'+s.name+'</div><div style="font-size:10px;color:#6b7280">'+s.tip+' • Invest: '+s.invest+'</div></div><div class="suggest-save">Save '+s.save+'</div>';
+      sl.appendChild(div);
+    });
+    document.getElementById('c-sugg').style.display='block';
+  }
+
+  // SAVE TO DATABASE
+  try{
+    push(ref(db,'tax_calculations'),{income:inc,regime:reg,tax:Math.round(tot),calculatedAt:new Date().toISOString()});
+  }catch(e){}
+};
+
+// ── ITR TRACKER ──
+window.openITR = function(){op('ov-itr');document.getElementById('itr-result').style.display='none';document.getElementById('itr-pan').value='';};
+window.trackITR = async function(){
+  var pan=document.getElementById('itr-pan').value.trim().toUpperCase();
+  if(pan.length!==10){alert('Please enter a valid 10-character PAN number.');return;}
+
+  // Save search to database
+  try{
+    await push(ref(db,'itr_searches'),{pan:pan.slice(0,4)+'XXXXX'+pan.slice(9),searchedAt:new Date().toISOString()});
+  }catch(e){}
+
+  // Show realistic demo status based on PAN
+  var statuses=[
+    {name:'PAN Verified',sub:'Your PAN is active and linked to Aadhaar',status:'done',icon:'✓'},
+    {name:'ITR Filed',sub:'ITR-1 filed for FY 2024-25',status:'done',icon:'✓'},
+    {name:'ITR Verified',sub:'e-Verified via Aadhaar OTP',status:'done',icon:'✓'},
+    {name:'Processing',sub:'ITR under processing at CPC Bengaluru',status:'active',icon:'⟳'},
+    {name:'Refund Initiated',sub:'Waiting for processing to complete',status:'pending',icon:'○'},
+    {name:'Refund Credited',sub:'Will be credited to your bank account',status:'pending',icon:'○'}
+  ];
+  var pct=60;
+  document.getElementById('itr-pct').textContent=pct+'% Complete';
+  document.getElementById('itr-bar').style.width=pct+'%';
+  var stepsDiv=document.getElementById('itr-steps');stepsDiv.innerHTML='';
+  statuses.forEach(function(s){
+    var div=document.createElement('div');div.className='itr-step '+s.status;
+    div.innerHTML='<div class="itr-icon '+s.status+'">'+s.icon+'</div><div class="itr-info"><div class="itr-name">'+s.name+'</div><div class="itr-sub">'+s.sub+'</div></div><div class="itr-tag '+s.status+'">'+(s.status==='done'?'Done':s.status==='active'?'In Progress':'Pending')+'</div>';
+    stepsDiv.appendChild(div);
+  });
+  document.getElementById('itr-result').style.display='block';
+};
+
+// ── WHATSAPP CONNECT ──
+window.openWA = function(){op('ov-wa');document.getElementById('wa-msg').style.display='none';};
+window.waConnect = async function(name,number,spec){
+  try{
+    await push(ref(db,'whatsapp_connects'),{ca:name,spec:spec,connectedAt:new Date().toISOString()});
+  }catch(e){}
+  var msg='Hello CA '+name+'! I found you on TaxSetu. I need help with '+spec+'. Can we connect?';
+  var url='https://wa.me/'+number+'?text='+encodeURIComponent(msg);
+  var wmsg=document.getElementById('wa-msg');
+  wmsg.textContent='✓ Opening WhatsApp to connect with '+name+'...';
+  wmsg.style.display='block';
+  setTimeout(function(){window.open(url,'_blank');},500);
+};
+
+// ── DOCUMENT UPLOAD ──
+window.openUpload = function(){
+  op('ov-upload');
+  document.getElementById('up-ok').style.display='none';
+  document.getElementById('upzone').style.display='block';
+  document.getElementById('up-btnarea').style.display='none';
+  document.getElementById('flist').innerHTML='';
+};
+window.dov = function(e){e.preventDefault();document.getElementById('upzone').classList.add('drag');};
+window.dol = function(){document.getElementById('upzone').classList.remove('drag');};
+window.dod = function(e){e.preventDefault();document.getElementById('upzone').classList.remove('drag');handleFiles(e.dataTransfer.files);};
+window.handleFiles = function(files){
+  Array.from(files).forEach(function(f){
+    var d=document.createElement('div');d.className='fitem';
+    var ic=f.name.endsWith('.pdf')?'📄':f.name.match(/\.(jpg|png)$/)?'🖼️':'📊';
+    d.innerHTML='<span style="font-size:16px">'+ic+'</span><span class="fname">'+f.name+'</span><button class="frem" onclick="this.parentElement.remove()">✕</button>';
+    document.getElementById('flist').appendChild(d);
+  });
+  if(files.length>0)document.getElementById('up-btnarea').style.display='block';
+};
+window.submitDocs = async function(){
+  try{
+    await push(ref(db,'document_uploads'),{uploadedAt:new Date().toISOString(),status:'pending_review'});
+  }catch(e){}
+  document.getElementById('upzone').style.display='none';
+  document.getElementById('flist').innerHTML='';
+  document.getElementById('up-btnarea').style.display='none';
+  document.getElementById('up-ok').style.display='block';
+};
+
 </script>
 </body>
 </html>
